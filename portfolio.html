@@ -438,6 +438,78 @@
       display: none;
     }
 
+    /* ---- Loading / In-Progress Card ---- */
+    .pf-card--loading {
+      background: linear-gradient(145deg, #052E34 0%, #083d47 100%);
+      border: 2px dashed var(--color-primary);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 36px 24px;
+      min-height: 380px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      box-shadow: 0 10px 30px rgba(5,46,52,0.15);
+    }
+
+    .pf-card--loading:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(255,115,0,0.25);
+      border-color: #FF8C1A;
+      background: linear-gradient(145deg, #073a42 0%, #0a4d5a 100%);
+    }
+
+    .loading-pulse-ring {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255, 115, 0, 0.12);
+      border: 2px solid var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+
+    .loading-spinner-svg {
+      animation: spin 4s linear infinite;
+    }
+
+    .skeleton-line {
+      height: 8px;
+      border-radius: 99px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.08) 25%, rgba(255,115,0,0.3) 50%, rgba(255,255,255,0.08) 75%);
+      background-size: 200% 100%;
+      animation: skeletonShimmer 2s infinite;
+      margin: 8px 0;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 0 0 rgba(255, 115, 0, 0.5); }
+      70% { box-shadow: 0 0 0 18px rgba(255, 115, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 115, 0, 0); }
+    }
+
+    @keyframes skeletonShimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+
     /* ---- Responsive ---- */
     @media (max-width: 1100px) {
       .portfolio-hero { padding: 60px 40px 48px; }
@@ -838,6 +910,36 @@
           </div>
         </div>
       </div>
+
+      <!-- ── 13. PROJECT IN PROGRESS / LOADING CARD ── -->
+      <div class="pf-card pf-card--loading" data-category="website ecommerce webapp dashboard concept">
+        <div class="loading-pulse-ring">
+          <svg class="loading-spinner-svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+        <span class="pf-card__category-pill" style="position: static; margin-bottom: 14px; background: rgba(255,115,0,0.15); color: var(--color-primary); border: 1px solid rgba(255,115,0,0.3);">
+          <span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; animation: blink 1.2s infinite;"></span>
+          PROJECT IN PROGRESS
+        </span>
+        <h2 class="pf-card__title" style="font-size: 20px; color: #ffffff; margin-bottom: 8px;">Your Next Big Project</h2>
+        <p class="pf-card__summary" style="font-size: 14px; color: rgba(255,255,255,0.75); margin-bottom: 20px; max-width: 280px;">
+          Currently building &amp; onboarding new clients. Reserve your spot for our next delivery cycle.
+        </p>
+
+        <!-- Skeleton Loading Simulation -->
+        <div style="width: 85%; margin-bottom: 24px;">
+          <div class="skeleton-line" style="width: 100%;"></div>
+          <div class="skeleton-line" style="width: 70%;"></div>
+          <div class="skeleton-line" style="width: 90%;"></div>
+        </div>
+
+        <a href="https://wa.me/919345743409?text=I%20want%20to%20start%20my%20project%20with%20Zen%20Nova%20Solutions" class="btn-cta-primary" target="_blank" rel="noopener noreferrer" style="font-size: 13px; padding: 11px 20px;">
+          Claim This Slot
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
 
     </div>
   </section>
