@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Zen Nova Solutions</title>
+  <meta name="description" content="Transparent, honest website pricing for local businesses in Tamil Nadu. Starter ₹3,500 · Business ₹8,999 · E-Commerce ₹18,999 · Custom from ₹25,000. No hidden fees, no surprises." />
+  <meta name="keywords" content="website pricing Tamil Nadu, affordable web development, Zen Nova Solutions pricing, website cost India, small business website price" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/magic-bento.css" />
+  <link rel="stylesheet" href="css/specular-button.css" />
+  <link rel="stylesheet" href="css/blur-text.css" />
+  <link rel="icon" href="assest/logo-mark.webp" type="image/webp" />
+
+  <style>
+    /* =============================================
+       PRICING PAGE — Scoped Styles
+       ============================================= */
+
+    /* ---- Hero ---- */
+    .pricing-hero {
+      padding: 80px 68px 72px;
+      text-align: center;
+      background: linear-gradient(160deg, #ffffff 0%, rgba(255,243,230,0.35) 55%, rgba(255,230,204,0.18) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-hero::before {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,115,0,0.06) 0%, transparent 70%);
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .pricing-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .pricing-hero__eyebrow-line {
+      width: 32px; height: 1px;
+      background: var(--color-primary);
+    }
+
+    .pricing-hero__eyebrow-text {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    .pricing-hero__heading {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 60px;
+      color: var(--color-dark-teal);
+      max-width: 720px;
+      margin: 0 auto 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .pricing-hero__sub {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+      color: var(--color-focus-text);
+      max-width: 620px;
+      margin: 0 auto 36px;
+    }
+
+    .pricing-hero__trust-strip {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding-top: 36px;
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--color-dark-teal);
+    }
+
+    .trust-pill__icon {
+      color: var(--color-primary);
+      font-size: 16px;
+    }
+
+    /* ---- Why Different ---- */
+    .why-different {
+      padding: 72px 68px;
+      background: linear-gradient(180deg, #F8FAFB 0%, #ffffff 100%);
+    }
+
+    .why-different__header {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .why-different__intro {
+      font-family: var(--font-primary);
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--color-focus-text);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .why-different__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .wd-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .wd-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FF7300, #FF3E30);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .wd-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,49,61,0.08);
+    }
+
+    .wd-card__icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .wd-card__title {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 24px;
+      color: var(--color-dark-teal);
+      margin-bottom: 10px;
+    }
+
+    .wd-card__desc {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--color-focus-text);
+    }
+
+    /* ---- Pricing Cards ---- */
+    .pricing-plans {
+      padding: 80px 68px;
+      background: #ffffff;
+    }
+
+    .pricing-plans__header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .plan-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: 16px;
+      padding: 32px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--color-border-light);
+      border-radius: 16px 16px 0 0;
+      transition: background 0.3s;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,49,61,0.1);
+    }
+
+    .plan-card:hover::before {
+      background: linear-gradient(90deg, #FF7300, #FF3E30);
+    }
+
+    /* Most popular plan */
+    .plan-card--popular {
+      border: 2px solid var(--color-primary);
+      background: linear-gradient(180deg, rgba(255,115,0,0.03) 0%, #ffffff 30%);
+      transform: scale(1.02);
+    }
+
+    .plan-card--popular::before {
+      background: linear-gradient(90deg, #FF7300, #FF3E30);
+    }
+
+    .plan-card--popular:hover {
+      transform: scale(1.02) translateY(-6px);
+    }
+
+    .plan-card__badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--color-primary);
+      color: #ffffff;
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 99px;
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    .plan-card__name {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      color: var(--color-dark-teal);
+      margin-bottom: 6px;
+    }
+
+    .plan-card__price {
+      font-family: var(--font-primary);
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 1;
+      color: var(--color-dark-teal);
+      margin-bottom: 4px;
+      letter-spacing: -1px;
+    }
+
+    .plan-card__price span {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .plan-card__billing {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--color-muted);
+      margin-bottom: 6px;
+    }
+
+    .plan-card__timeline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--color-primary);
+      background: rgba(255,115,0,0.08);
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+
+    .plan-card__best-for {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+      color: var(--color-focus-text);
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .plan-card__section-label {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 12px;
+    }
+
+    .plan-card__features {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .plan-card__features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+      color: var(--color-body);
+    }
+
+    .plan-card__features li::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* Pros / Cons mini sections */
+    .plan-card__proscons {
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .proscons-block__label {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .proscons-block__label--pros { color: #2E7D32; }
+    .proscons-block__label--cons { color: #B71C1C; }
+
+    .proscons-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .proscons-list li {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--color-focus-text);
+      padding-left: 4px;
+    }
+
+    .plan-card__cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      background: var(--color-dark-teal);
+      color: #ffffff;
+      border-radius: 8px;
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      text-align: center;
+    }
+
+    .plan-card__cta:hover {
+      background: #073a42;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(5,46,52,0.22);
+    }
+
+    .plan-card--popular .plan-card__cta {
+      background: linear-gradient(135deg, #FF8C1A 0%, #FF6600 100%);
+      color: #00181D;
+    }
+
+    .plan-card--popular .plan-card__cta:hover {
+      background: linear-gradient(135deg, #FF9933 0%, #FF7300 100%);
+      box-shadow: 0 8px 22px rgba(255,115,0,0.4);
+    }
+
+    /* ---- Add-Ons ---- */
+    .addons-section {
+      padding: 72px 68px;
+      background: linear-gradient(180deg, #F8FAFB 0%, #ffffff 100%);
+    }
+
+    .addons-section__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .addon-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .addon-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,49,61,0.07);
+      border-color: rgba(255,115,0,0.2);
+    }
+
+    .addon-card__icon { font-size: 22px; }
+
+    .addon-card__name {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--color-dark-teal);
+    }
+
+    .addon-card__price {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--color-primary);
+    }
+
+    .addon-card__note {
+      font-family: var(--font-primary);
+      font-size: 12px;
+      color: var(--color-muted);
+      line-height: 18px;
+    }
+
+    /* ---- Ongoing Costs ---- */
+    .ongoing-costs {
+      padding: 72px 68px;
+      background: #ffffff;
+    }
+
+    .ongoing-costs__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .costs-table-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border-light);
+    }
+
+    .costs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-primary);
+    }
+
+    .costs-table thead {
+      background: var(--color-dark-teal);
+    }
+
+    .costs-table thead th {
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.9);
+      text-align: left;
+    }
+
+    .costs-table tbody tr {
+      border-bottom: 1px solid var(--color-border-light);
+      transition: background 0.2s;
+    }
+
+    .costs-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .costs-table tbody tr:hover {
+      background: rgba(255,115,0,0.02);
+    }
+
+    .costs-table tbody td {
+      padding: 14px 20px;
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--color-body);
+      vertical-align: middle;
+    }
+
+    .costs-table tbody td:first-child {
+      font-weight: 600;
+      color: var(--color-dark-teal);
+    }
+
+    .costs-table .cost-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .cost-pill--free { background: #E8F5E9; color: #2E7D32; }
+    .cost-pill--paid { background: rgba(255,115,0,0.08); color: #E65100; }
+
+    .costs-note {
+      max-width: 900px;
+      margin: 20px auto 0;
+      padding: 16px 20px;
+      background: rgba(255,115,0,0.04);
+      border: 1px solid rgba(255,115,0,0.15);
+      border-radius: var(--radius-md);
+      font-family: var(--font-primary);
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--color-focus-text);
+    }
+
+    .costs-note strong { color: var(--color-dark-teal); }
+
+    /* ---- How to Choose ---- */
+    .how-to-choose {
+      padding: 72px 68px;
+      background: linear-gradient(135deg, #052E34 0%, #083d47 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .how-to-choose::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,115,0,0.1) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .how-to-choose__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .how-to-choose__header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .how-to-choose__eyebrow {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+
+    .how-to-choose__heading {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 38px;
+      color: #ffffff;
+    }
+
+    .decision-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .decision-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      transition: background 0.3s;
+    }
+
+    .decision-item:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .decision-item__arrow {
+      color: var(--color-primary);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .decision-item__need {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+      flex: 1;
+    }
+
+    .decision-item__plan {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--color-primary);
+      white-space: nowrap;
+      padding: 4px 14px;
+      background: rgba(255,115,0,0.12);
+      border-radius: 99px;
+    }
+
+    .how-to-choose__note {
+      text-align: center;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      line-height: 24px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .how-to-choose__note a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ---- Payment Terms ---- */
+    .payment-terms {
+      padding: 72px 68px;
+      background: #ffffff;
+    }
+
+    .payment-terms__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .payment-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .payment-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,49,61,0.07);
+    }
+
+    .payment-card__icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255,115,0,0.1) 0%, rgba(255,115,0,0.04) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .payment-card__body {}
+
+    .payment-card__title {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--color-dark-teal);
+      margin-bottom: 6px;
+    }
+
+    .payment-card__desc {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--color-focus-text);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1200px) {
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .plan-card--popular { transform: none; }
+      .plan-card--popular:hover { transform: translateY(-6px); }
+      .addons-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 1100px) {
+      .pricing-hero, .why-different, .pricing-plans, .addons-section,
+      .ongoing-costs, .how-to-choose, .payment-terms { padding-left: 40px; padding-right: 40px; }
+      .pricing-hero__heading { font-size: 42px; line-height: 50px; }
+      .why-different__grid { grid-template-columns: 1fr; max-width: 480px; }
+    }
+
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .payment-grid { grid-template-columns: 1fr; }
+      .pricing-hero__heading { font-size: 36px; line-height: 44px; }
+    }
+
+    @media (max-width: 640px) {
+      .pricing-hero, .why-different, .pricing-plans, .addons-section,
+      .ongoing-costs, .how-to-choose, .payment-terms { padding-left: 20px; padding-right: 20px; padding-top: 48px; padding-bottom: 48px; }
+      .pricing-hero__heading { font-size: 30px; line-height: 38px; }
+      .addons-grid { grid-template-columns: 1fr; }
+      .pricing-hero__trust-strip { gap: 20px; }
+      .decision-item { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       1. ANNOUNCEMENT BAR
+       ========================================= -->
+  <div class="announcement-bar" id="announcement-bar">
+    <a href="tel:+919345743409" class="announcement-bar__phone">91+ 9345743409</a>
+    <div class="announcement-bar__center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <a href="mailto:zennovasolution01@gmail.com" class="announcement-bar__email">zennovasolution01@gmail.com</a>
+    </div>
+    <div class="announcement-bar__socials">
+      <a href="#" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 24 17" fill="white"><path d="M23.498 2.186A3.016 3.016 0 0021.38.068C19.505-.384 12-.384 12-.384s-7.505 0-9.38.452A3.016 3.016 0 00.502 2.186C.05 4.061.05 8 .05 8s0 3.94.452 5.814a3.016 3.016 0 002.118 2.118c1.875.452 9.38.452 9.38.452s7.505 0 9.38-.452a3.016 3.016 0 002.118-2.118C23.95 11.939 23.95 8 23.95 8s0-3.94-.452-5.814zM9.545 11.568V4.432L15.818 8l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- =========================================
+       2. NAVIGATION
+       ========================================= -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar__brand">
+      <img src="assest/logo-mark.webp" alt="Zen Nova Solutions Logo" class="navbar__logo" />
+      <span class="navbar__name">Zen Nova Solutions</span>
+    </a>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar__links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#portfolio">Protofolio</a></li>
+      <li><a href="pricing.html" style="color: var(--color-primary);">Pricing</a></li>
+    </ul>
+    <a href="#cta-footer" class="navbar__contact">Contact</a>
+  </nav>
+
+  <!-- =========================================
+       3. HERO
+       ========================================= -->
+  <section class="pricing-hero">
+    <div class="pricing-hero__eyebrow">
+      <span class="pricing-hero__eyebrow-line"></span>
+      <span class="pricing-hero__eyebrow-text">Transparent Pricing</span>
+      <span class="pricing-hero__eyebrow-line"></span>
+    </div>
+    <h1 class="pricing-hero__heading">Honest Pricing for<br />Local Businesses</h1>
+    <p class="pricing-hero__sub">No hidden fees, no surprise costs. Every plan includes direct access to our team, transparent timelines, and support that actually shows up. Choose the plan that fits your business — or tell us what you need.</p>
+
+    <div class="pricing-hero__trust-strip">
+      <span class="trust-pill"><span class="trust-pill__icon">✅</span> All prices upfront — no "Get a Quote" walls</span>
+      <span class="trust-pill"><span class="trust-pill__icon">✅</span> Fixed delivery timelines</span>
+      <span class="trust-pill"><span class="trust-pill__icon">✅</span> Honest pros &amp; cons per plan</span>
+      <span class="trust-pill"><span class="trust-pill__icon">✅</span> You own everything on delivery</span>
+    </div>
+  </section>
+
+  <!-- =========================================
+       4. WHY DIFFERENT
+       ========================================= -->
+  <section class="why-different">
+    <div class="why-different__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">WHY WE'RE DIFFERENT</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">What You Get With Every Plan</h2>
+    </div>
+    <p class="why-different__intro">Most agencies hide their pricing behind "Get a Quote" forms. We don't. Here's what every client gets, regardless of which plan they choose:</p>
+    <div class="why-different__grid">
+      <div class="wd-card">
+        <div class="wd-card__icon">👥</div>
+        <h3 class="wd-card__title">Direct Access to Builders</h3>
+        <p class="wd-card__desc">No account managers, no outsourced teams. You work directly with the people designing and building your site — R. Karthikeyan and Jegan. S.</p>
+      </div>
+      <div class="wd-card">
+        <div class="wd-card__icon">⏱️</div>
+        <h3 class="wd-card__title">Fixed Timelines</h3>
+        <p class="wd-card__desc">Every plan has a clear delivery window. No "we'll get to it when we can" — you know exactly when your site will be live before we start.</p>
+      </div>
+      <div class="wd-card">
+        <div class="wd-card__icon">🔍</div>
+        <h3 class="wd-card__title">Zero Hidden Costs</h3>
+        <p class="wd-card__desc">What you see here is what you pay. Domain and hosting are listed separately so you know the full picture before you decide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       5. PRICING PLANS
+       ========================================= -->
+  <section class="pricing-plans" id="plans">
+    <div class="pricing-plans__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">WEBSITE PLANS</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">4 Plans. One Clear Price Each.</h2>
+      <p class="section-subtext" style="margin-top: 12px;">Pick the plan that matches your business stage — or mix and add services from the Add-Ons section below.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- ── STARTER ── -->
+      <div class="plan-card">
+        <div class="plan-card__name">Starter</div>
+        <div class="plan-card__price"><span>₹</span>3,500</div>
+        <div class="plan-card__billing">one-time payment</div>
+        <div class="plan-card__timeline">⏱ 3–5 day delivery</div>
+        <p class="plan-card__best-for"><strong>Best for:</strong> First-time website owners, freelancers, students, small shops needing a basic online presence fast.</p>
+
+        <div class="plan-card__section-label">What's included</div>
+        <ul class="plan-card__features">
+          <li>4 static pages (Home, About, Services, Contact)</li>
+          <li>Responsive design — mobile, tablet, desktop</li>
+          <li>HTML5, CSS3, JavaScript</li>
+          <li>Contact form with email notifications</li>
+          <li>Google Maps integration</li>
+          <li>Basic SEO setup (meta tags, titles)</li>
+          <li>Free deployment on Vercel/Netlify</li>
+          <li>1 round of revisions</li>
+        </ul>
+
+        <div class="plan-card__proscons">
+          <div>
+            <div class="proscons-block__label proscons-block__label--pros">Pros</div>
+            <ul class="proscons-list">
+              <li>✅ Most affordable — get online fast</li>
+              <li>✅ Clean, professional design on all devices</li>
+              <li>✅ Pay once, own it — no monthly fees</li>
+              <li>✅ Perfect for testing a business idea</li>
+            </ul>
+          </div>
+          <div>
+            <div class="proscons-block__label proscons-block__label--cons">Cons</div>
+            <ul class="proscons-list">
+              <li>❌ Can't edit content yourself</li>
+              <li>❌ Limited to 4 pages (₹500 each extra)</li>
+              <li>❌ No blog or e-commerce</li>
+              <li>❌ Template-based design</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="https://wa.me/919345743409?text=I'm%20interested%20in%20the%20Starter%20Plan%20(₹3,500)" class="plan-card__cta" target="_blank" rel="noopener noreferrer">
+          Start Starter Plan →
+        </a>
+      </div>
+
+      <!-- ── BUSINESS (Most Popular) ── -->
+      <div class="plan-card plan-card--popular">
+        <span class="plan-card__badge">⭐ Most Popular</span>
+        <div class="plan-card__name">Business</div>
+        <div class="plan-card__price"><span>₹</span>8,999</div>
+        <div class="plan-card__billing">one-time payment</div>
+        <div class="plan-card__timeline">⏱ 7–10 day delivery</div>
+        <p class="plan-card__best-for"><strong>Best for:</strong> Growing businesses, professional services, clinics, restaurants, retail shops that want to look established.</p>
+
+        <div class="plan-card__section-label">What's included</div>
+        <ul class="plan-card__features">
+          <li>8 pages (Home, About, Services, Portfolio, Blog, Contact + 2 custom)</li>
+          <li>Responsive design with modern animations</li>
+          <li>HTML5, CSS3, JavaScript + React (optional)</li>
+          <li>Contact form with spam protection</li>
+          <li>Google Maps &amp; WhatsApp integration</li>
+          <li>SEO-optimized structure (schema, meta tags)</li>
+          <li>Social media links and sharing</li>
+          <li>Free deployment + domain setup assistance</li>
+          <li>2 rounds of revisions</li>
+          <li>1 month free maintenance support</li>
+        </ul>
+
+        <div class="plan-card__proscons">
+          <div>
+            <div class="proscons-block__label proscons-block__label--pros">Pros</div>
+            <ul class="proscons-list">
+              <li>✅ Best value for most small businesses</li>
+              <li>✅ Blog section included for SEO</li>
+              <li>✅ Modern design with animations</li>
+              <li>✅ 1 month free support after launch</li>
+              <li>✅ Scalable — can upgrade to e-commerce</li>
+            </ul>
+          </div>
+          <div>
+            <div class="proscons-block__label proscons-block__label--cons">Cons</div>
+            <ul class="proscons-list">
+              <li>❌ No e-commerce (requires separate plan)</li>
+              <li>❌ Content editing needs developer</li>
+              <li>❌ 8-page limit (₹750 each extra)</li>
+              <li>❌ Not for complex workflows</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="https://wa.me/919345743409?text=I'm%20interested%20in%20the%20Business%20Plan%20(₹8,999)" class="plan-card__cta" target="_blank" rel="noopener noreferrer">
+          Start Business Plan →
+        </a>
+      </div>
+
+      <!-- ── E-COMMERCE ── -->
+      <div class="plan-card">
+        <div class="plan-card__name">E-Commerce</div>
+        <div class="plan-card__price"><span>₹</span>18,999</div>
+        <div class="plan-card__billing">one-time payment</div>
+        <div class="plan-card__timeline">⏱ 14–21 day delivery</div>
+        <p class="plan-card__best-for"><strong>Best for:</strong> Retail shops, product sellers, fashion brands, food businesses — anyone selling products online.</p>
+
+        <div class="plan-card__section-label">What's included</div>
+        <ul class="plan-card__features">
+          <li>Full online store (up to 50 products)</li>
+          <li>Product catalog with categories &amp; filters</li>
+          <li>Shopping cart and checkout system</li>
+          <li>Payment gateway (Razorpay, PhonePe, Stripe)</li>
+          <li>Order management dashboard</li>
+          <li>Inventory tracking (basic)</li>
+          <li>Mobile-optimized checkout</li>
+          <li>GST-compliant invoice generation</li>
+          <li>Free deployment + domain setup</li>
+          <li>3 rounds of revisions</li>
+          <li>2 months free maintenance support</li>
+        </ul>
+
+        <div class="plan-card__proscons">
+          <div>
+            <div class="proscons-block__label proscons-block__label--pros">Pros</div>
+            <ul class="proscons-list">
+              <li>✅ Complete store — start selling immediately</li>
+              <li>✅ Secure multi-gateway payments</li>
+              <li>✅ Mobile-optimized checkout</li>
+              <li>✅ 2 months free support</li>
+              <li>✅ Scales to 500+ products</li>
+            </ul>
+          </div>
+          <div>
+            <div class="proscons-block__label proscons-block__label--cons">Cons</div>
+            <ul class="proscons-list">
+              <li>❌ Higher upfront cost</li>
+              <li>❌ Gateway fees 1.9–2.5% per transaction</li>
+              <li>❌ You provide product data/images</li>
+              <li>❌ Not for multi-vendor marketplaces</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="https://wa.me/919345743409?text=I'm%20interested%20in%20the%20E-Commerce%20Plan%20(₹18,999)" class="plan-card__cta" target="_blank" rel="noopener noreferrer">
+          Start E-Commerce Plan →
+        </a>
+      </div>
+
+      <!-- ── CUSTOM ── -->
+      <div class="plan-card">
+        <div class="plan-card__name">Custom</div>
+        <div class="plan-card__price" style="font-size: 26px; letter-spacing: -0.5px;">from <span style="font-size: 18px;">₹</span>25,000</div>
+        <div class="plan-card__billing">varies by scope</div>
+        <div class="plan-card__timeline">⏱ 4–12 weeks</div>
+        <p class="plan-card__best-for"><strong>Best for:</strong> Businesses with unique needs — booking systems, CRMs, SaaS products, dashboards, custom web apps.</p>
+
+        <div class="plan-card__section-label">What's included</div>
+        <ul class="plan-card__features">
+          <li>Discovery call &amp; requirements gathering</li>
+          <li>Custom UI/UX design (no templates)</li>
+          <li>Frontend + backend development</li>
+          <li>Database design and management</li>
+          <li>Third-party API &amp; CRM integrations</li>
+          <li>User authentication &amp; roles</li>
+          <li>Admin dashboard and reporting</li>
+          <li>Full testing &amp; QA</li>
+          <li>Deployment and go-live support</li>
+          <li>3 months free maintenance support</li>
+        </ul>
+
+        <div class="plan-card__proscons">
+          <div>
+            <div class="proscons-block__label proscons-block__label--pros">Pros</div>
+            <ul class="proscons-list">
+              <li>✅ Built for your exact workflow</li>
+              <li>✅ Full code ownership</li>
+              <li>✅ Scalable architecture</li>
+              <li>✅ 3 months free support</li>
+              <li>✅ Integrates with your existing systems</li>
+            </ul>
+          </div>
+          <div>
+            <div class="proscons-block__label proscons-block__label--cons">Cons</div>
+            <ul class="proscons-list">
+              <li>❌ Higher cost and longer timeline</li>
+              <li>❌ Needs detailed requirements upfront</li>
+              <li>❌ Overkill for simple brochure sites</li>
+              <li>❌ Ongoing maintenance as retainer</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="https://wa.me/919345743409?text=I'd%20like%20to%20discuss%20a%20Custom%20project" class="plan-card__cta" target="_blank" rel="noopener noreferrer">
+          Discuss Custom Project →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+       6. ADD-ONS
+       ========================================= -->
+  <section class="addons-section" id="addons">
+    <div class="addons-section__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">ADD-ON SERVICES</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">Build Your Own Bundle</h2>
+      <p class="section-subtext" style="margin-top: 12px;">Extras that can be added to any plan — or ordered as standalone services.</p>
+    </div>
+
+    <div class="addons-grid">
+      <div class="addon-card">
+        <div class="addon-card__icon">📄</div>
+        <div class="addon-card__name">Additional Pages</div>
+        <div class="addon-card__price">₹500–₹750 / page</div>
+        <div class="addon-card__note">Depends on your active plan</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-card__icon">✍️</div>
+        <div class="addon-card__name">Content Writing</div>
+        <div class="addon-card__price">₹1,000 / page</div>
+        <div class="addon-card__note">Professional copywriting per page</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-card__icon">🎨</div>
+        <div class="addon-card__name">Logo Design</div>
+        <div class="addon-card__price">₹2,500</div>
+        <div class="addon-card__note">Custom logo + brand guidelines</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-card__icon">📱</div>
+        <div class="addon-card__name">Social Media Kit</div>
+        <div class="addon-card__price">₹3,000</div>
+        <div class="addon-card__note">10 post templates + story templates</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-card__icon">🎬</div>
+        <div class="addon-card__name">Video Editing (Reel)</div>
+        <div class="addon-card__price">₹1,500 / reel</div>
+        <div class="addon-card__note">30–60 second optimized reel</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-card__icon">🔧</div>
+        <div class="addon-card__name">Monthly Maintenance</div>
+        <div class="addon-card__price">₹1,500 / month</div>
+        <div class="addon-card__note">Updates, backups, security, minor changes</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-card__icon">🔍</div>
+        <div class="addon-card__name">SEO Package</div>
+        <div class="addon-card__price">₹5,000 / month</div>
+        <div class="addon-card__note">Keywords, on-page SEO, content strategy</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-card__icon">📢</div>
+        <div class="addon-card__name">Google Ads Setup</div>
+        <div class="addon-card__price">₹7,500 one-time</div>
+        <div class="addon-card__note">Campaign setup + 1 month management</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       7. ONGOING COSTS
+       ========================================= -->
+  <section class="ongoing-costs">
+    <div class="ongoing-costs__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">FULL PICTURE</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">Ongoing Costs to Expect</h2>
+      <p class="section-subtext" style="margin-top: 12px;">Most agencies don't mention these until after the sale. We show them upfront so you can budget accurately from day one.</p>
+    </div>
+
+    <div class="costs-table-wrap">
+      <table class="costs-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Cost</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Domain name (.in / .com)</td>
+            <td><span class="cost-pill cost-pill--paid">₹500–₹1,500 / year</span></td>
+            <td>Required — renew annually. You own it.</td>
+          </tr>
+          <tr>
+            <td>Web hosting</td>
+            <td><span class="cost-pill cost-pill--free">Free–₹500 / month</span></td>
+            <td>Free on Vercel/Netlify for static sites; paid for dynamic sites</td>
+          </tr>
+          <tr>
+            <td>SSL certificate</td>
+            <td><span class="cost-pill cost-pill--free">Free</span></td>
+            <td>Let's Encrypt — included with most hosting</td>
+          </tr>
+          <tr>
+            <td>Email hosting</td>
+            <td><span class="cost-pill cost-pill--paid">₹75–₹500 / user / month</span></td>
+            <td>Google Workspace or Zoho Mail (optional)</td>
+          </tr>
+          <tr>
+            <td>Maintenance &amp; updates</td>
+            <td><span class="cost-pill cost-pill--paid">₹1,500–₹5,000 / month</span></td>
+            <td>Optional — security patches, content, backups</td>
+          </tr>
+          <tr>
+            <td>Payment gateway fees</td>
+            <td><span class="cost-pill cost-pill--paid">1.9–2.5% per transaction</span></td>
+            <td>Razorpay, PhonePe, Stripe — only for e-commerce plans</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="costs-note"><strong>Note:</strong> Our plans include free deployment on Vercel/Netlify — which means <strong>zero hosting costs for static and basic dynamic sites.</strong> Your only recurring cost is domain renewal (₹500–₹1,500/year).</p>
+  </section>
+
+  <!-- =========================================
+       8. HOW TO CHOOSE
+       ========================================= -->
+  <section class="how-to-choose">
+    <div class="how-to-choose__inner">
+      <div class="how-to-choose__header">
+        <div class="how-to-choose__eyebrow">Which Plan Is Right for You?</div>
+        <h2 class="how-to-choose__heading">Pick Your Starting Point</h2>
+      </div>
+
+      <div class="decision-list">
+        <div class="decision-item">
+          <span class="decision-item__arrow">→</span>
+          <span class="decision-item__need">Just need a basic online presence fast</span>
+          <span class="decision-item__plan">Starter · ₹3,500</span>
+        </div>
+        <div class="decision-item">
+          <span class="decision-item__arrow">→</span>
+          <span class="decision-item__need">Running a service business, clinic, or shop</span>
+          <span class="decision-item__plan">Business · ₹8,999</span>
+        </div>
+        <div class="decision-item">
+          <span class="decision-item__arrow">→</span>
+          <span class="decision-item__need">Selling products online</span>
+          <span class="decision-item__plan">E-Commerce · ₹18,999</span>
+        </div>
+        <div class="decision-item">
+          <span class="decision-item__arrow">→</span>
+          <span class="decision-item__need">Need a booking system, CRM, or custom dashboard</span>
+          <span class="decision-item__plan">Custom · from ₹25,000</span>
+        </div>
+      </div>
+
+      <p class="how-to-choose__note">Still unsure? <a href="https://wa.me/919345743409" target="_blank" rel="noopener noreferrer">Talk to us</a> — we'll map out exactly what you need in a 15-minute call, with no obligation.</p>
+    </div>
+  </section>
+
+  <!-- =========================================
+       9. PAYMENT TERMS
+       ========================================= -->
+  <section class="payment-terms">
+    <div class="payment-terms__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">PAYMENT</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">Payment Terms</h2>
+      <p class="section-subtext" style="margin-top: 12px;">Simple, fair, and clearly spelled out before we start a single line of work.</p>
+    </div>
+
+    <div class="payment-grid">
+      <div class="payment-card">
+        <div class="payment-card__icon">💳</div>
+        <div class="payment-card__body">
+          <div class="payment-card__title">50% Upfront</div>
+          <p class="payment-card__desc">Project starts after advance payment. This protects both sides and confirms your commitment to the project timeline.</p>
+        </div>
+      </div>
+      <div class="payment-card">
+        <div class="payment-card__icon">🚀</div>
+        <div class="payment-card__body">
+          <div class="payment-card__title">50% on Delivery</div>
+          <p class="payment-card__desc">Final payment before handover and deployment. You review and approve before paying the balance.</p>
+        </div>
+      </div>
+      <div class="payment-card">
+        <div class="payment-card__icon">🏗️</div>
+        <div class="payment-card__body">
+          <div class="payment-card__title">Custom Plan Milestones</div>
+          <p class="payment-card__desc">Milestone-based: 30% to kick off → 40% at mid-point → 30% on delivery. Agreed in writing before work begins.</p>
+        </div>
+      </div>
+      <div class="payment-card">
+        <div class="payment-card__icon">🔄</div>
+        <div class="payment-card__body">
+          <div class="payment-card__title">Refund Policy</div>
+          <p class="payment-card__desc">Full refund if we can't start within 7 days of advance payment. No hidden fees — what you see is what you pay.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       10. FINAL CTA BANNER
+       ========================================= -->
+  <section class="cta-footer" id="cta-footer">
+    <h2 class="cta-footer__heading">Ready to Get Started?</h2>
+    <p class="cta-footer__text">No pressure, no sales pitch — just a straightforward conversation about what your business needs.</p>
+    <div class="cta-footer__buttons">
+      <a href="https://wa.me/919345743409" class="btn-cta-primary" target="_blank" rel="noopener noreferrer">
+        Book Free Consultation
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="https://wa.me/919345743409" class="btn-cta-secondary" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================
+       11. SITE FOOTER
+       ========================================= -->
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <div class="site-footer__col site-footer__brand">
+        <a href="index.html" class="site-footer__logo-link">
+          <img src="assest/logo-mark.webp" alt="Zen Nova Solutions" class="site-footer__logo" />
+          <span class="site-footer__brand-name">Zen Nova Solutions</span>
+        </a>
+        <p class="site-footer__desc">Building high-converting digital experiences, websites, and marketing strategies engineered to help your business grow.</p>
+        <div class="site-footer__contact-info">
+          <a href="tel:+919345743409" class="site-footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 9345743409
+          </a>
+          <a href="mailto:zennovasolution01@gmail.com" class="site-footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            zennovasolution01@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Quick Links</h4>
+        <ul class="site-footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Plans</h4>
+        <ul class="site-footer__links">
+          <li><a href="pricing.html#plans">Starter · ₹3,500</a></li>
+          <li><a href="pricing.html#plans">Business · ₹8,999</a></li>
+          <li><a href="pricing.html#plans">E-Commerce · ₹18,999</a></li>
+          <li><a href="pricing.html#plans">Custom · from ₹25,000</a></li>
+          <li><a href="pricing.html#addons">Add-On Services</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Industries</h4>
+        <ul class="site-footer__links">
+          <li><a href="index.html#we-work-with">Jewellery &amp; Retail</a></li>
+          <li><a href="index.html#we-work-with">Photo Studios</a></li>
+          <li><a href="index.html#we-work-with">Clothing &amp; Fashion</a></li>
+          <li><a href="index.html#we-work-with">Restaurants &amp; Hotels</a></li>
+          <li><a href="index.html#we-work-with">Healthcare &amp; Fintech</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">&copy; 2026 Zen Nova Solutions. All rights reserved.</p>
+      <div class="site-footer__socials">
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 17" fill="currentColor"><path d="M23.498 2.186A3.016 3.016 0 0021.38.068C19.505-.384 12-.384 12-.384s-7.505 0-9.38.452A3.016 3.016 0 00.502 2.186C.05 4.061.05 8 .05 8s0 3.94.452 5.814a3.016 3.016 0 002.118 2.118c1.875.452 9.38.452 9.38.452s7.505 0 9.38-.452a3.016 3.016 0 002.118-2.118C23.95 11.939 23.95 8 23.95 8s0-3.94-.452-5.814zM9.545 11.568V4.432L15.818 8l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       SCRIPTS
+       ========================================= -->
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/magic-bento.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ogl@1.0.6/dist/ogl.umd.js"></script>
+  <script src="js/specular-button.js"></script>
+  <script src="js/blur-text.js"></script>
+  <script src="js/click-spark.js"></script>
+
+</body>
+</html>

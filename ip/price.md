@@ -1,247 +1,433 @@
-# Zen Nova Solutions — pricing.md
+Zen Nova Solutions — Pricing Page
+File: pricing.md
+Linked from: index.md (Pricing navigation)
+Design system: Matches index.md — colors, header, footer, CTA patterns
 
-Full spec for the **Pricing** page (linked from `index.md`). Built on what makes pricing pages convert: a fast side-by-side comparison, one clearly recommended plan, no hidden gaps a visitor has to guess at, and an FAQ that closes the objections a comparison table can't.
+Page Hero
+Layout: Centered, full-width hero with subtle gradient background
 
-Colors, header, footer, and CTA pattern follow `index.md` — this file only covers what's unique to the Pricing page.
+Eyebrow text: Simple, Transparent Pricing
 
----
+Headline:
 
-## Design Principles Behind This Spec
+Honest Pricing for Local Businesses
 
-1. **Reduce the mental math.** The fewer decisions a visitor has to make on their own, the faster they pick a plan — so the middle tier is visually emphasized as the recommended default.
-2. **Cards for the quick scan, a table for the detail.** Side-by-side cards work for a fast comparison; a full feature table below catches the visitor who wants every difference spelled out before deciding.
-3. **Transparent pricing builds trust.** All three prices stay visible on the page — nothing behind a "contact us" wall, since that adds friction for a local-business visitor who just wants a number.
-4. **Every plan gets its own CTA**, not one generic button at the bottom of the page.
-5. **Flag what's genuinely unclear rather than inventing it.** A few real-world details (payment terms, revision rounds, whether domain/hosting is included) aren't in the current site content — this spec marks those clearly so you fill in the real answer instead of me guessing.
+Subheadline:
 
----
+No hidden fees, no surprise costs. Every plan includes direct access to our team, transparent timelines, and support that actually shows up. Choose the plan that fits your business — or tell us what you need and we'll build it.
 
-## Page Hero
+Why Our Pricing Is Different
+Layout: Single column, 3-point grid with icons
 
-**Layout:** Centered intro directly above the pricing cards — no separate hero visual needed, since the cards themselves are the page's focal point.
+Copy:
 
-**Eyebrow:** Pricing
+Most agencies hide their pricing behind "Get a Quote" forms. We don't. Here's what you get with every plan:
 
-**Headline:**
-> Simple, Transparent Pricing
+Direct access to builders — No account managers, no outsourced teams. You work with the people actually designing and building your site.
 
-**Subheadline:**
-> Three plans built for local business budgets — see exactly what's included, no hidden costs.
+Fixed timelines — Every plan has a clear delivery window. No "we'll get to it when we can" promises.
 
----
+Transparent process — You'll know exactly what's included, what's extra, and when you'll go live. No surprises halfway through.
 
-## Pricing Cards
+Website Plans
+Layout: 3-column pricing grid on desktop, stacked on mobile. Each card has: plan name, price, short description, "Best for" tag, feature list, pros/cons section, and CTA button.
 
-**Layout:** 3-column side-by-side (stacked on mobile), middle card visually emphasized — larger, bordered, or elevated — with a "Most Popular" badge.
+Starter Plan
+Price: ₹3,500 (one-time)
 
-### Starter — ₹3,500
-*For businesses that need a clean, functional website live fast.*
-- 5 Pages
-- Responsive Design
-- WhatsApp Integration
-- Contact Form
-- Google Maps
-- 7 Days Support
+Best for: First-time website owners, freelancers, students, small shops needing a basic online presence
 
-**CTA:** Get Started
+Timeline: 3–5 days
 
----
+What's included:
 
-### Professional — ₹5,000 — Most Popular
-*For businesses that want to look established and show up locally.*
-- Everything in Starter
-- Custom UI
-- Google Business Profile Setup
-- Gallery
-- Custom Contact Page
-- 15 Days Support
+4 static pages (Home, About, Services, Contact)
 
-**CTA:** Get Started
+Responsive design (mobile, tablet, desktop)
 
----
+HTML5, CSS3, JavaScript (no frameworks)
 
-### Premium — ₹7,000
-*For businesses that want the full premium experience, ready to convert from day one.*
-- Everything in Professional
-- Premium UI
-- Booking Form
-- Advanced Animations
-- Priority Support
-- 30 Days Support
+Contact form with email notifications
 
-**CTA:** Get Started
+Google Maps integration
 
----
+Basic SEO setup (meta tags, titles)
 
-## Feature Comparison Table
+Free deployment on Vercel/Netlify
 
-**Layout:** Full-width table below the cards — same three plans as columns, every feature as a row, checkmarks or values per cell. This is for the visitor who scrolled past the cards still deciding.
+1 round of revisions
 
-| Feature | Starter (₹3,500) | Professional (₹5,000) | Premium (₹7,000) |
-|---|---|---|---|
-| Pages | 5 | 5+ | 5+ |
-| Responsive Design | ✅ | ✅ | ✅ |
-| WhatsApp Integration | ✅ | ✅ | ✅ |
-| Contact Form | ✅ | ✅ | ✅ |
-| Google Maps | ✅ | ✅ | ✅ |
-| Custom UI | — | ✅ | ✅ |
-| Google Business Profile Setup | — | ✅ | ✅ |
-| Gallery | — | ✅ | ✅ |
-| Custom Contact Page | — | ✅ | ✅ |
-| Premium UI | — | — | ✅ |
-| Booking Form | — | — | ✅ |
-| Advanced Animations | — | — | ✅ |
-| Priority Support | — | — | ✅ |
-| Support Window | 7 Days | 15 Days | 30 Days |
+What's not included:
 
----
+Content management system (you can't edit pages yourself)
 
-## "Which Plan Is Right for You?"
+Blog or news section
 
-**Purpose:** Removes the guesswork for a visitor who doesn't know how to map their business needs onto a plan name.
+E-commerce or payment integration
 
-**Layout:** Short paragraph or 3-line guide, sits between the table and the FAQ.
+Custom animations or advanced interactions
 
-**Copy:**
-> New to having a website at all? Starter gets you live fast with everything essential. Want to show up when nearby customers search on Google? Professional adds Google Business Profile setup, built specifically for that. Taking bookings directly through your site, or want the most polished first impression possible? Premium is built for that.
+Ongoing maintenance (available as add-on)
 
----
+Pros:
 
-## Add-Ons & Standalone Services
+✅ Most affordable option for getting online fast
 
-**Purpose:** Not every visitor wants a full website plan — some just need one service. This section prevents them from thinking website design is the *only* thing you offer.
+✅ Clean, professional design that works on all devices
 
-**Copy:**
-> Already have a website and just need branding, social creatives, or video editing? Those are available as standalone services, quoted based on scope. See the [Services page] for details, or reach out and we'll give you a clear number.
+✅ No recurring monthly fees — pay once, own it
 
----
+✅ Perfect for testing a business idea or building credibility
 
-## Trust / Reassurance Line
+Cons:
 
-**Layout:** Small text band under the comparison table, not a full section — a quiet trust signal, not a hard sell.
+❌ Can't add/edit content yourself (need developer for changes)
 
-**Copy:**
-> Fixed pricing, no surprise costs. What you see here is what you pay for the plan you choose.
+❌ Limited to 4 pages (additional pages ₹500 each)
 
-*[Gap to fill before publishing: confirm whether domain and hosting costs are included in these prices or billed separately — this isn't specified in the current content, and it's one of the first questions a visitor will have. Same for payment terms (full amount upfront vs. milestone-based) and how many design revision rounds are included per plan.]*
+❌ No blog or e-commerce features
 
----
+❌ Basic design (template-based, not fully custom)
 
-## Pricing FAQ
+CTA: Start Starter Plan →
 
-- **Is domain and hosting included in the price?** *[Confirm and fill in — not currently specified.]*
-- **How do I pay?** *[Confirm and fill in — e.g. full amount upfront, 50% to start, or milestone-based.]*
-- **How many revisions are included?** *[Confirm and fill in — visitors on Professional/Premium in particular will expect this answered.]*
-- **What happens after my support window ends?** You can reach out anytime after your support period for updates or fixes — these are handled separately once the included window closes.
-- **Can I upgrade my plan later?** Yes — if you start with Starter and want to add Professional or Premium features later, we can upgrade your site rather than rebuilding from scratch.
-- **Do you offer custom pricing outside these three plans?** For larger or more complex projects, reach out and we'll scope it separately.
+Business Plan
+Price: ₹8,999 (one-time)
 
----
+Best for: Growing businesses, professional services, clinics, restaurants, retail shops
 
-## Final CTA Banner
+Timeline: 7–10 days
 
-**Heading:** Ready to Get Started?
-**Subheading:** Pick a plan, or tell us what you need — we reply within one business day.
-**CTA buttons:** Book Free Consultation · Chat on WhatsApp
+What's included:
 
----
+8 pages (Home, About, Services, Portfolio, Blog, Contact, + 2 custom)
 
-## Summary of What Changed vs. the Current Site
+Responsive design with modern animations
 
-- Added a **full feature comparison table** underneath the existing cards — the cards alone work for a fast scan, but the table catches visitors who want every difference spelled out before paying.
-- Added a **"Which Plan Is Right for You?"** section — the current site lists three plans but gives no guidance on how to choose between them.
-- Added an **Add-Ons / Standalone Services** note so visitors who don't need a full website (just branding or video editing) aren't left assuming website design is the only option.
-- Flagged **three real gaps** (domain/hosting inclusion, payment terms, revision rounds) that the current pricing content doesn't specify — these are exactly the questions that stall a visitor right before they'd otherwise convert, so worth confirming before this page goes live rather than leaving them to ask over WhatsApp.# Zen Nova Solutions — index.md
-### Master Site Reference & AI Build Prompt
+HTML5, CSS3, JavaScript + React (optional)
 
-This file is the single source of truth for the whole website. It does not contain full page copy — each page's detailed content lives in its own file (`service.md`, `portfolio.md`, etc.). This file contains what applies **everywhere**: brand colors, structure, global components, and site functions.
+Contact form with spam protection
 
-**How to use this file:** If you're an AI (or developer) implementing this site, read this file first for the design system and sitemap, then open the matching content file for a given page to get its exact section-by-section copy. Don't invent structure that contradicts this file — treat it as the constraint layer, and the page files as the content layer.
+Google Maps, WhatsApp integration
 
----
+SEO-optimized structure (schema markup, meta tags)
 
-## 1. Brand & Design System
+Social media links and sharing
 
-### Colors
+Free deployment + domain setup assistance
 
-| Name | Hex | Role | Usage |
-|---|---|---|---|
-| Deep Green | `#264653` | Primary | Header/nav background, footer background, primary body text on light sections, dark UI blocks |
-| Vivid Orange | `#fb8500` | Accent / CTA | Buttons, links, hover states, highlights, badges. Keep this the *only* loud color on a page — if everything is orange, nothing stands out. |
-| Warm Cream White | `#fefae0` | Base / Background | Page background, card backgrounds, negative space |
+2 rounds of revisions
 
-**Contrast pairing rules:**
-- Orange CTA buttons sit on cream or green backgrounds — never orange text on white, and never orange-on-orange.
-- Green is dark enough to use as body text on cream backgrounds, or as a background with cream/white text on top.
-- Avoid pairing green text directly on orange, or orange text directly on green — check contrast before using it (low-contrast combos will fail accessibility and are hard to read).
+1 month free maintenance support
 
-**Suggested neutral additions** *(optional — confirm with whoever's doing visual design before locking in)*: a mid-gray (e.g. `#6b6b6b`) for secondary/muted text, and pure white (`#ffffff`) for text on top of the green header where cream would feel too close in tone.
+What's not included:
 
-### Typography *(suggestion, not locked)*
-A clean, modern sans-serif (e.g. Inter, Poppins, or similar) for both headings and body — keeps the site feeling premium without competing with the color palette for attention. Headings can carry more weight (semi-bold/bold); body text stays regular weight for readability.
+E-commerce or payment gateway integration
 
-### Tone of Voice
-Plain, conversational, benefit-first. Short sentences. Speaks directly to the local-business owner ("you"), not at them. No jargon. Established across all page files already written — keep new content consistent with this.
+User login/authentication system
 
----
+Custom web applications or dashboards
 
-## 2. Project Overview
+Advanced CMS (WordPress, Sanity, etc.)
 
-**Company:** Zen Nova Solutions — digital agency based in Tamil Nadu, founded September 2025.
-**Leadership:** R. Karthikeyan (Founder & CEO), Jegan. S (Managing Director).
-**What the site needs to do:** Convert local-business visitors into booked consultations — every page should have a clear, repeated path to "Book Free Consultation" or WhatsApp.
-**Audience:** Local and small businesses across Tamil Nadu / South India who need a website, branding, or visibility help, and are comparing agencies on trust and price.
+Content writing (you provide text/images)
 
----
+Pros:
 
-## 3. Site Map & File Reference
+✅ Best value for most small businesses
 
-| Page | Content File | Status | Covers |
-|---|---|---|---|
-| Home | `zen-nova-solutions-homepage-spec.md` | ✅ Done | Hero, trust strip, services teaser, process, why-us, portfolio teaser, pricing teaser, about teaser, FAQ, final CTA |
-| Services | `zen-nova-solutions-services-spec.md` | ✅ Done | All 6 services in full depth, "where to start" guide, services FAQ |
-| Portfolio | `portfolio.md` | ⬜ Not yet created | Full case studies per project (currently only teaser versions exist in the homepage file) |
-| Pricing | `pricing.md` | ⬜ Not yet created | Full plan breakdown, comparison detail, pricing FAQ |
-| About | `about.md` | ⬜ Not yet created | Full leadership bios, mission/vision/values, studio story |
-| Contact | `contact.md` | ⬜ Not yet created | Form spec, contact details, map embed, response-time expectations |
+✅ Can add blog/news section for SEO
 
-> Say the word and I'll build out `portfolio.md`, `pricing.md`, `about.md`, and `contact.md` next, matching this same file-per-page structure.
+✅ Modern design with animations and interactions
 
----
+✅ Includes 1 month of free support after launch
 
-## 4. Global Components (appear on every page)
+✅ Scalable — can upgrade to e-commerce later
 
-**Header / Nav**
-- Logo (left) · Nav links: Home · Services · Portfolio · Pricing · About · Contact · Persistent CTA button: **Book Free Consultation** (right, visible on scroll)
+Cons:
 
-**Footer**
-- Brand blurb + tagline
-- Quick links (same as nav)
-- Contact block: phone, email, location
-- Social links: [Instagram](https://www.instagram.com/zennova_solutions/) · [LinkedIn](https://www.linkedin.com/in/zen-nova-solutions)
-- Copyright bar with leadership credit
+❌ Still no e-commerce (requires separate plan)
 
-**Repeating CTA pattern**
-- Primary: "Book Free Consultation" (appears in header, hero, and every major section break)
-- Secondary: "Chat on WhatsApp" (appears alongside primary CTA at key conversion points — hero, final banner, contact page)
+❌ Content management requires developer (unless CMS add-on purchased)
 
----
+❌ 8-page limit (additional pages ₹750 each)
 
-## 5. Core Site Functions
+❌ Not suitable for complex business workflows
 
-- **Contact form** — Full name, Email, Phone, Service interested in (dropdown), Message → submits to `zennovasolution01@gmail.com`
-- **WhatsApp click-to-chat** — `+91 93457 43409`, available from header/footer/contact/final CTA banner
-- **Google Maps embed** — on Contact page, showing Tamil Nadu service area
-- **Google Business Profile link** — external link, referenced in footer or contact page
-- **Social links** — Instagram and LinkedIn, in footer (and optionally contact page)
-- **Responsive requirement** — mobile-first; every page must be tested at phone, tablet, and desktop widths before considered complete
+CTA: Start Business Plan →
 
----
+E-Commerce Plan
+Price: ₹18,999 (one-time)
 
-## 6. Build Notes for AI Implementation
+Best for: Retail shops, product sellers, fashion brands, food businesses, anyone selling online
 
-- Apply the color system (Section 1) globally — don't introduce new colors per page.
-- Use this file for anything cross-page (header, footer, CTAs, tone). Use the matching page file (Section 3) for exact section content on that page.
-- Keep the CTA pattern identical across pages — don't invent new button labels per page.
-- Where a page file says a section is a "placeholder" (e.g. testimonials) — leave it out of the build rather than inventing filler content.
-- Files still marked ⬜ in Section 3 don't have detailed specs yet — use the relevant teaser content from the homepage file as a fallback until the full page file is created.
+Timeline: 14–21 days
+
+What's included:
+
+Full online store (up to 50 products)
+
+Product catalog with categories and filters
+
+Shopping cart and checkout system
+
+Payment gateway integration (Razorpay, PhonePe, Stripe)
+
+Order management dashboard
+
+Inventory tracking (basic)
+
+Customer account creation (optional)
+
+Mobile-optimized checkout
+
+GST-compliant invoice generation
+
+Shipping integration (Shiprocket, Delhivery — optional)
+
+Free deployment + domain setup
+
+3 rounds of revisions
+
+2 months free maintenance support
+
+What's not included:
+
+Multi-vendor marketplace functionality
+
+Advanced inventory management (ERP-level)
+
+Custom mobile app
+
+Subscription/recurring payment features
+
+Product photography or content creation
+
+Pros:
+
+✅ Complete online store — start selling immediately
+
+✅ Secure payment processing with multiple gateways
+
+✅ Mobile-optimized for smartphone shoppers
+
+✅ Includes 2 months of free support
+
+✅ Scalable to 500+ products as you grow
+
+Cons:
+
+❌ Higher upfront cost (but pays for itself in sales)
+
+❌ Transaction fees apply (payment gateway charges 1.9–2.5%)
+
+❌ Requires product data entry (you provide product info/images)
+
+❌ Not suitable for complex marketplaces (multi-vendor)
+
+CTA: Start E-Commerce Plan →
+
+Custom Plan
+Price: Starting at ₹25,000 (varies by scope)
+
+Best for: Businesses with unique needs, custom web applications, SaaS products, booking systems, CRMs, ERPs
+
+Timeline: 4–12 weeks (depends on complexity)
+
+What's included:
+
+Fully custom solution built around your workflow
+
+Discovery call and requirements gathering
+
+Custom UI/UX design (not template-based)
+
+Frontend + backend development
+
+Database design and management
+
+Third-party integrations (APIs, CRMs, payment gateways)
+
+User authentication and role-based access
+
+Admin dashboard and reporting
+
+Testing and quality assurance
+
+Deployment and go-live support
+
+3 months free maintenance support
+
+What's not included:
+
+Ongoing feature development (available as retainer)
+
+Mobile app development (separate quote)
+
+Content creation (copywriting, photography, video)
+
+Advanced SEO or marketing services
+
+Pros:
+
+✅ Built exactly for your business needs — no compromises
+
+✅ Full ownership of code and intellectual property
+
+✅ Scalable architecture that grows with your business
+
+✅ Includes 3 months of free support
+
+✅ Can integrate with any existing systems you use
+
+Cons:
+
+❌ Higher cost and longer timeline than pre-built plans
+
+❌ Requires detailed requirements and regular check-ins
+
+❌ Not suitable for simple brochure websites (overkill)
+
+❌ Custom solutions need ongoing maintenance (available as retainer)
+
+CTA: Discuss Custom Project →
+
+Add-On Services
+Layout: 2-column grid of optional extras that can be added to any plan
+
+Additional Pages — ₹500–₹750 per page (depending on plan)
+
+Content Writing — ₹1,000 per page (professional copywriting)
+
+Logo Design — ₹2,500 (custom logo + brand guidelines)
+
+Social Media Kit — ₹3,000 (10 post templates + story templates)
+
+Video Editing (Reel) — ₹1,500 per reel (30–60 seconds)
+
+Monthly Maintenance — ₹1,500/month (updates, backups, security, minor changes)
+
+SEO Package — ₹5,000/month (keyword research, on-page optimization, content strategy)
+
+Google Ads Setup — ₹7,500 one-time (campaign setup + 1 month management)
+
+Ongoing Costs to Expect
+Layout: Single column table or card list — this builds trust through transparency about hidden costs most agencies don't mention
+
+Item	Cost	Notes
+Domain name (.in / .com)	₹500–₹1,500/year	Required — renew annually
+Web hosting	Free–₹500/month	Free on Vercel/Netlify for static sites; paid hosting for dynamic sites
+SSL certificate	Free	Let's Encrypt (included with most hosting)
+Email hosting	₹75–₹500/user/month	Google Workspace or Zoho Mail (optional)
+Maintenance & updates	₹1,500–₹5,000/month	Optional — security patches, content updates, backups
+Payment gateway fees	1.9–2.5% per transaction	Razorpay, PhonePe, Stripe (only for e-commerce)
+Note: Our plans include free deployment on Vercel/Netlify, which means zero hosting costs for static and basic dynamic sites. You only pay for domain renewal (₹500–₹1,500/year).
+
+How to Choose
+Layout: Single column, decision tree or simple guidance
+
+Copy:
+
+Not sure which plan fits? Here's a quick guide:
+
+Just need a basic online presence? → Starter Plan (₹3,500)
+
+Running a service business or shop? → Business Plan (₹8,999)
+
+Selling products online? → E-Commerce Plan (₹18,999)
+
+Need something custom (booking system, CRM, dashboard)? → Custom Plan (starting ₹25,000)
+
+Still unsure? Talk to us — we'll map out exactly what you need in a 15-minute call, with no obligation.
+
+Payment Terms
+Layout: Single column, clear bullet points
+
+50% upfront — Project starts after advance payment
+
+50% on delivery — Before final deployment and handover
+
+Custom plans — Milestone-based payments (30% → 40% → 30%)
+
+Refund policy — Full refund if we can't start within 7 days of advance payment
+
+No hidden fees — What you see is what you pay. Domain and hosting are separate (you own them).
+
+Final CTA Banner
+Layout: Full-width banner with contrasting background (matches index CTA pattern)
+
+Heading: Ready to Get Started?
+
+Subheading: No pressure, no sales pitch — just a straightforward conversation about what your business needs.
+
+CTA buttons:
+
+Book Free Consultation
+
+Chat on WhatsApp
+
+Pricing Research & Market Positioning
+This pricing structure is based on current market rates in Tamil Nadu (2026):
+
+Competitive Analysis
+Provider	Starter	Business	E-Commerce	Custom
+Zen Nova Solutions	₹3,500	₹8,999	₹18,999	₹25,000+
+SparkCanvas (Andhra)	₹1,599	₹2,499	₹7,999	₹15,000+
+Redpulse Software (Karur)	₹5,000	₹15,000	₹25,000	₹75,000+
+Websitez (Chennai)	₹999	₹4,900	N/A	N/A
+Sunface (Tirupur)	N/A	₹10,000	₹18,000	₹25,000+
+Industry average (Tier 2)	₹5,000–₹10,000	₹15,000–₹30,000	₹25,000–₹50,000	₹50,000+
+Why This Pricing Works
+Undercuts metro agencies by 40–60% — Tier-2 pricing advantage (Coimbatore/Erode vs Bangalore/Chennai) while maintaining quality [web:31]
+
+Competitive with local players — Slightly below Redpulse (Karur) and Sunface (Tirupur) for comparable scope, making Zen Nova attractive for budget-conscious businesses [web:31][web:36]
+
+Transparent pros/cons — Following the pattern from SparkCanvas and other modern agencies that build trust through honesty about limitations [web:34]
+
+Clear upgrade path — Starter → Business → E-Commerce → Custom creates natural progression as clients grow, reducing friction for future upsells
+
+Add-on revenue — Maintenance, SEO, content writing, and design services create recurring revenue without bloating base plan prices
+
+Market Positioning
+Target audience: Small businesses, startups, freelancers in Tamil Nadu (especially Coimbatore, Erode, Tirupur, Salem belt)
+
+Value proposition: "Metro-quality work at Tier-2 prices" — same quality as Bangalore/Chennai agencies at 40–60% lower cost [web:31]
+
+Differentiation: Direct access to builders, fixed timelines, transparent pricing (no "Get a Quote" hiding)
+
+Design Notes
+Pricing cards: Use consistent visual hierarchy — plan name, price, "Best for" tag, features, pros/cons, CTA
+
+Highlight recommended plan: Consider visually emphasizing the Business Plan (₹8,999) as "Most Popular" or "Best Value"
+
+Mobile: Stack pricing cards vertically on mobile. Ensure pros/cons are readable on small screens.
+
+CTAs: Each plan should have a clear, action-oriented CTA (not generic "Contact Us")
+
+Tone: Honest, transparent, grounded — no inflated claims or fake scarcity ("Only 3 slots left!")
+
+Content Principles Applied
+This spec follows patterns from effective pricing pages:
+
+Transparent cost breakdown — Following the pattern from Redpulse Software and SparkCanvas that show exactly what's included and what's extra [web:31][web:34]
+
+Pros/cons for each plan — Builds trust through honesty about limitations, following the approach from modern agencies that differentiate through transparency [web:34]
+
+Clear "Best for" guidance — Helps visitors self-select the right plan, reducing friction and decision paralysis [web:31][web:34]
+
+Ongoing costs disclosure — Shows domain, hosting, maintenance costs upfront — a pattern from trustworthy agencies that avoid hidden fees [web:31]
+
+Market-competitive pricing — Based on actual 2026 rates from Tamil Nadu agencies (Redpulse, SparkCanvas, Sunface, Websitez) — not arbitrary numbers [web:31][web:34][web:36]
+
+What Changed vs. Typical Agency Pricing
+No "Get a Quote" hiding — All prices visible upfront, following the transparent pricing trend from modern agencies [web:31][web:34]
+
+Pros/cons included — Most agency pricing pages only list features. We show limitations too, which builds more trust [web:34]
+
+"What's not included" section — Explicitly calls out exclusions to avoid scope creep and mismatched expectations
+
+Add-on menu — Clear pricing for extras (pages, content, maintenance) so clients can budget accurately
+
+Ongoing costs table — Shows domain, hosting, email, maintenance costs that most agencies hide until after the sale
+
+End of file
