@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Zen Nova Solutions</title>
+  <meta name="description" content="Meet the founders behind Zen Nova Solutions — a hands-on studio helping local businesses across Tamil Nadu look credible online. Direct access to the people building your site." />
+  <meta name="keywords" content="Zen Nova Solutions, about us, web development studio, Tamil Nadu, R. Karthikeyan, Jegan S, UI UX design, digital agency" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/magic-bento.css" />
+  <link rel="stylesheet" href="css/specular-button.css" />
+  <link rel="stylesheet" href="css/blur-text.css" />
+  <link rel="icon" href="assest/logo-mark.webp" type="image/webp" />
+
+  <style>
+    /* =============================================
+       ABOUT PAGE — Scoped Styles
+       ============================================= */
+
+    /* ---- Hero ---- */
+    .about-hero {
+      padding: 80px 68px 72px;
+      text-align: center;
+      background: linear-gradient(160deg, #ffffff 0%, rgba(255,243,230,0.35) 55%, rgba(255,230,204,0.18) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,115,0,0.06) 0%, transparent 70%);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .about-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .about-hero__eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--color-primary);
+      display: inline-block;
+    }
+
+    .about-hero__eyebrow-text {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    .about-hero__heading {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 60px;
+      color: var(--color-dark-teal);
+      max-width: 760px;
+      margin: 0 auto 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .about-hero__sub {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 30px;
+      color: var(--color-focus-text);
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    .about-hero__stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    .about-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .about-stat__number {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1;
+      color: var(--color-primary);
+    }
+
+    .about-stat__label {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--color-muted);
+      text-align: center;
+    }
+
+    /* ---- Our Story ---- */
+    .our-story {
+      padding: 80px 68px;
+      background: #ffffff;
+    }
+
+    .our-story__inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .our-story__header {
+      margin-bottom: 40px;
+    }
+
+    .our-story__body p {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: var(--color-body);
+      margin-bottom: 24px;
+    }
+
+    .our-story__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .our-story__body p strong {
+      color: var(--color-dark-teal);
+      font-weight: 600;
+    }
+
+    /* ---- Mission & Vision ---- */
+    .mission-vision {
+      padding: 80px 68px;
+      background: linear-gradient(180deg, #F8FAFB 0%, #ffffff 100%);
+    }
+
+    .mission-vision__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .mission-vision__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .mv-card {
+      padding: 36px 32px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border-light);
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .mv-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(0, 49, 61, 0.08);
+    }
+
+    .mv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FF7300, #FF3E30);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .mv-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,115,0,0.12) 0%, rgba(255,115,0,0.04) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .mv-card__label {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    .mv-card__title {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 28px;
+      color: var(--color-dark-teal);
+      margin-bottom: 14px;
+    }
+
+    .mv-card__text {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--color-focus-text);
+    }
+
+    /* ---- Core Values ---- */
+    .core-values {
+      padding: 80px 68px;
+      background: #ffffff;
+    }
+
+    .core-values__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .value-card {
+      padding: 32px 28px;
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0, 49, 61, 0.07);
+      border-color: rgba(255, 115, 0, 0.2);
+    }
+
+    .value-card__icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255,115,0,0.1) 0%, rgba(255,115,0,0.04) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .value-card__body {}
+
+    .value-card__title {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 24px;
+      color: var(--color-dark-teal);
+      margin-bottom: 8px;
+    }
+
+    .value-card__desc {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--color-focus-text);
+    }
+
+    /* ---- Leadership Team ---- */
+    .leadership {
+      padding: 80px 68px;
+      background: linear-gradient(180deg, #F8FAFB 0%, #ffffff 100%);
+    }
+
+    .leadership__header {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .leadership__subtext {
+      text-align: center;
+      font-family: var(--font-primary);
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--color-focus-text);
+      margin-bottom: 52px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .team-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: 16px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.35s, box-shadow 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FF7300, #FF3E30);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 49, 61, 0.1);
+    }
+
+    .team-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .team-card__avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-dark-teal) 0%, #0a4a56 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 0 0 4px rgba(255,115,0,0.12), 0 0 0 8px rgba(255,115,0,0.05);
+      position: relative;
+    }
+
+    .team-card__avatar-initials {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 26px;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .team-card__avatar-badge {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      width: 26px;
+      height: 26px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .team-card__avatar-badge svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .team-card__name {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 28px;
+      color: var(--color-dark-teal);
+      margin-bottom: 6px;
+    }
+
+    .team-card__role {
+      display: inline-block;
+      padding: 4px 14px;
+      background: rgba(255,115,0,0.08);
+      border: 1px solid rgba(255,115,0,0.2);
+      border-radius: 99px;
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .team-card__divider {
+      width: 40px;
+      height: 1px;
+      background: var(--color-border-light);
+      margin: 0 auto 20px;
+    }
+
+    .team-card__bio {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 24px;
+      color: var(--color-focus-text);
+    }
+
+    /* ---- Journey / Timeline ---- */
+    .journey {
+      padding: 80px 68px;
+      background: #ffffff;
+    }
+
+    .journey__header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 31px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--color-primary) 0%, rgba(255,115,0,0.2) 100%);
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      margin-bottom: 44px;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid var(--color-primary);
+      box-shadow: 0 0 0 6px rgba(255,115,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      z-index: 1;
+    }
+
+    .timeline-dot--future {
+      border-color: var(--color-border-light);
+      box-shadow: none;
+    }
+
+    .timeline-dot--future .timeline-dot__emoji {
+      opacity: 0.4;
+    }
+
+    .timeline-body {
+      padding-top: 12px;
+      flex: 1;
+    }
+
+    .timeline-date {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+    }
+
+    .timeline-title {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+      color: var(--color-dark-teal);
+      margin-bottom: 8px;
+    }
+
+    .timeline-desc {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 24px;
+      color: var(--color-focus-text);
+    }
+
+    .timeline-desc a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ---- Why This Matters ---- */
+    .why-matters {
+      padding: 80px 68px;
+      background: linear-gradient(135deg, #052E34 0%, #083d47 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-matters::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,115,0,0.1) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .why-matters__inner {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .why-matters__eyebrow {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+    }
+
+    .why-matters__heading {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 46px;
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    .why-matters__text {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ---- Services Page Hero (re-use for about) ---- */
+    .about-services-hint {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1100px) {
+      .about-hero { padding: 60px 40px 56px; }
+      .about-hero__heading { font-size: 42px; line-height: 50px; }
+      .our-story, .mission-vision, .core-values, .leadership, .journey, .why-matters { padding: 60px 40px; }
+    }
+
+    @media (max-width: 900px) {
+      .mission-vision__grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .about-hero__heading { font-size: 36px; line-height: 44px; }
+      .about-hero__sub { font-size: 17px; }
+    }
+
+    @media (max-width: 640px) {
+      .about-hero { padding: 48px 20px 44px; }
+      .about-hero__heading { font-size: 30px; line-height: 38px; }
+      .our-story, .mission-vision, .core-values, .leadership, .journey, .why-matters { padding: 48px 20px; }
+      .about-hero__stats { gap: 28px; }
+      .timeline::before { left: 29px; }
+      .why-matters__heading { font-size: 28px; line-height: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       1. ANNOUNCEMENT BAR
+       ========================================= -->
+  <div class="announcement-bar" id="announcement-bar">
+    <a href="tel:+919345743409" class="announcement-bar__phone">91+ 9345743409</a>
+    <div class="announcement-bar__center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <a href="mailto:zennovasolution01@gmail.com" class="announcement-bar__email">zennovasolution01@gmail.com</a>
+    </div>
+    <div class="announcement-bar__socials">
+      <a href="#" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 24 17" fill="white"><path d="M23.498 2.186A3.016 3.016 0 0021.38.068C19.505-.384 12 -.384 12-.384s-7.505 0-9.38.452A3.016 3.016 0 00.502 2.186C.05 4.061.05 8 .05 8s0 3.94.452 5.814a3.016 3.016 0 002.118 2.118c1.875.452 9.38.452 9.38.452s7.505 0 9.38-.452a3.016 3.016 0 002.118-2.118C23.95 11.939 23.95 8 23.95 8s0-3.94-.452-5.814zM9.545 11.568V4.432L15.818 8l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- =========================================
+       2. NAVIGATION
+       ========================================= -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar__brand">
+      <img src="assest/logo-mark.webp" alt="Zen Nova Solutions Logo" class="navbar__logo" />
+      <span class="navbar__name">Zen Nova Solutions</span>
+    </a>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar__links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html" style="color: var(--color-primary);">About</a></li>
+      <li><a href="index.html#portfolio">Protofolio</a></li>
+      <li><a href="index.html#faq">Pricing</a></li>
+    </ul>
+    <a href="#cta-footer" class="navbar__contact">Contact</a>
+  </nav>
+
+  <!-- =========================================
+       3. PAGE HERO
+       ========================================= -->
+  <section class="about-hero">
+    <div class="about-hero__eyebrow">
+      <span class="about-hero__eyebrow-line"></span>
+      <span class="about-hero__eyebrow-text">About Us</span>
+      <span class="about-hero__eyebrow-line"></span>
+    </div>
+    <h1 class="about-hero__heading">
+      Built by People Who Answer<br />Their Own Phone
+    </h1>
+    <p class="about-hero__sub">
+      Zen Nova Solutions is a small, hands-on studio helping local businesses across Tamil Nadu look credible online — and we mean hands-on literally. Every project gets direct attention from the people actually designing and building it.
+    </p>
+
+    <!-- Quick trust stats -->
+    <div class="about-hero__stats">
+      <div class="about-stat">
+        <span class="about-stat__number">Sep '25</span>
+        <span class="about-stat__label">Founded</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat__number">6+</span>
+        <span class="about-stat__label">Projects Delivered</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat__number">2</span>
+        <span class="about-stat__label">Founders — Direct Access</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat__number">TN</span>
+        <span class="about-stat__label">Tamil Nadu Based</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       4. OUR STORY
+       ========================================= -->
+  <section class="our-story" id="our-story">
+    <div class="our-story__inner">
+      <div class="our-story__header">
+        <div class="accent-line-group" style="margin-bottom: 8px;">
+          <span class="accent-line"></span>
+          <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">OUR STORY</span>
+        </div>
+        <h2 class="section-heading" style="text-align: left; margin-bottom: 0;">Why We Started</h2>
+      </div>
+      <div class="our-story__body">
+        <p>Zen Nova Solutions started in <strong>September 2025</strong> with a simple observation: local businesses across Tamil Nadu were being sold the same generic, overpriced website packages built for enterprise budgets — with none of the personal attention a growing business actually needs.</p>
+        <p>We started small on purpose. No account managers, no outsourced work passed between teams — just <strong>direct access to the people actually designing and building your site.</strong> That's still true today.</p>
+        <p>Every project we take on gets the same starting point: understand the business, understand its customers, then design around what will actually make someone pick up the phone or send a message. Not what looks impressive in a portfolio — what works for a local business trying to grow.</p>
+        <p>From our first client in retail to partnerships with photographers and e-commerce stores, we've stayed focused on one thing: <strong>building digital presence that turns visitors into paying customers.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       5. MISSION & VISION
+       ========================================= -->
+  <section class="mission-vision" id="mission-vision">
+    <div class="mission-vision__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">PURPOSE</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">Mission &amp; Vision</h2>
+      <p class="section-subtext">What we're building towards — and why it matters for your business.</p>
+    </div>
+    <div class="mission-vision__grid">
+      <!-- Mission -->
+      <div class="mv-card">
+        <div class="mv-card__icon">🎯</div>
+        <div class="mv-card__label">Mission</div>
+        <div class="mv-card__title">What We're Here to Do</div>
+        <p class="mv-card__text">To help local businesses build a digital presence that looks premium, builds trust instantly, and turns visitors into paying customers.</p>
+      </div>
+      <!-- Vision -->
+      <div class="mv-card">
+        <div class="mv-card__icon">🌟</div>
+        <div class="mv-card__label">Vision</div>
+        <div class="mv-card__title">Where We're Headed</div>
+        <p class="mv-card__text">To become Tamil Nadu's most trusted digital partner for small and growing local businesses — known for quality work and direct, honest relationships.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       6. CORE VALUES
+       ========================================= -->
+  <section class="core-values" id="core-values">
+    <div class="core-values__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">HOW WE WORK</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">Core Values</h2>
+      <p class="section-subtext">Not just words on a wall — each of these shapes what you experience when you work with us.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-card__icon">⭐</div>
+        <div class="value-card__body">
+          <h3 class="value-card__title">Quality First</h3>
+          <p class="value-card__desc">We don't cut corners to hit a fast timeline. Every site goes through the same design and QA process, regardless of plan.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">💬</div>
+        <div class="value-card__body">
+          <h3 class="value-card__title">Honest Communication</h3>
+          <p class="value-card__desc">Clear updates, transparent pricing, and no surprise costs partway through a project.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">📍</div>
+        <div class="value-card__body">
+          <h3 class="value-card__title">Local Understanding</h3>
+          <p class="value-card__desc">We design around how Tamil Nadu's local businesses actually get discovered — not a generic template built for anywhere.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon">🤝</div>
+        <div class="value-card__body">
+          <h3 class="value-card__title">Long-Term Partnership</h3>
+          <p class="value-card__desc">We're not a one-and-done vendor. Support continues after launch, and most clients come back as their business grows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       7. LEADERSHIP TEAM
+       ========================================= -->
+  <section class="leadership" id="leadership">
+    <div class="leadership__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">THE TEAM</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">Leadership Team</h2>
+    </div>
+    <p class="leadership__subtext">Direct attention from the co-founders leading your project — no account managers in the middle.</p>
+
+    <div class="team-grid">
+
+      <!-- R. Karthikeyan -->
+      <div class="team-card">
+        <div class="team-card__avatar">
+          <span class="team-card__avatar-initials">RK</span>
+          <div class="team-card__avatar-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="12" height="12"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill-rule="evenodd"/></svg>
+          </div>
+        </div>
+        <h3 class="team-card__name">R. Karthikeyan</h3>
+        <span class="team-card__role">Founder &amp; CEO</span>
+        <div class="team-card__divider"></div>
+        <p class="team-card__bio">Founder-led UI/UX designer and entrepreneur who started Zen Nova Solutions from the ground up, with a focus on design quality and direct client relationships from day one.</p>
+      </div>
+
+      <!-- Jegan. S -->
+      <div class="team-card">
+        <div class="team-card__avatar">
+          <span class="team-card__avatar-initials">JS</span>
+          <div class="team-card__avatar-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="12" height="12"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" fill-rule="evenodd"/></svg>
+          </div>
+        </div>
+        <h3 class="team-card__name">Jegan. S</h3>
+        <span class="team-card__role">Co-Founder</span>
+        <div class="team-card__divider"></div>
+        <p class="team-card__bio">Leads business strategy, client partnerships, and day-to-day operations — making sure every project moves from first conversation to launch smoothly and on schedule.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+       8. OUR JOURNEY (TIMELINE)
+       ========================================= -->
+  <section class="journey" id="journey">
+    <div class="journey__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">MILESTONES</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">Our Journey</h2>
+      <p class="section-subtext">From a single observation to real businesses growing online — and we're just getting started.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"><span>🚀</span></div>
+        <div class="timeline-body">
+          <div class="timeline-date">September 2025</div>
+          <div class="timeline-title">Zen Nova Solutions Founded</div>
+          <p class="timeline-desc">Started with a clear focus: give local businesses in Tamil Nadu the same premium digital presence that larger companies take for granted — at honest, fair pricing.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"><span>📦</span></div>
+        <div class="timeline-body">
+          <div class="timeline-date">2025 – 2026</div>
+          <div class="timeline-title">First Client Projects Delivered</div>
+          <p class="timeline-desc">Delivered websites across e-commerce, photography, and retail — including Urban Steps, Saravana Studio, and Bharathi Phones &amp; Frames. <a href="index.html#portfolio">View Portfolio →</a></p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot timeline-dot--future"><span class="timeline-dot__emoji">🌱</span></div>
+        <div class="timeline-body">
+          <div class="timeline-date" style="color: var(--color-muted);">Coming Next</div>
+          <div class="timeline-title" style="color: var(--color-muted);">Growing the Studio</div>
+          <p class="timeline-desc" style="color: rgba(92,112,115,0.7);">New services, new team members, and more local businesses across Tamil Nadu going live — all while keeping the same direct, hands-on approach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       9. WHY THIS MATTERS TO YOU
+       ========================================= -->
+  <section class="why-matters">
+    <div class="why-matters__inner">
+      <div class="why-matters__eyebrow">Why This Matters to You</div>
+      <h2 class="why-matters__heading">The Advantage of Working With a Small Studio</h2>
+      <p class="why-matters__text">Working with an early-stage studio means more of our time on your project, faster turnarounds, and pricing that reflects where we are today — not enterprise overhead passed on to you. As we grow, that hands-on attention is what we're committed to keeping.</p>
+    </div>
+  </section>
+
+  <!-- =========================================
+       10. CTA / FOOTER (matches homepage exactly)
+       ========================================= -->
+  <section class="cta-footer" id="cta-footer">
+    <h2 class="cta-footer__heading">Want to Work Directly With Us?</h2>
+    <p class="cta-footer__text">No account managers, no outsourced teams — just a straightforward conversation about your business.</p>
+    <div class="cta-footer__buttons">
+      <a href="https://wa.me/919345743409" class="btn-cta-primary" target="_blank" rel="noopener noreferrer">
+        Book Free Consultation
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="https://wa.me/919345743409" class="btn-cta-secondary" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Full Site Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <!-- Col 1: Brand & Contact Info -->
+      <div class="site-footer__col site-footer__brand">
+        <a href="index.html" class="site-footer__logo-link">
+          <img src="assest/logo-mark.webp" alt="Zen Nova Solutions" class="site-footer__logo" />
+          <span class="site-footer__brand-name">Zen Nova Solutions</span>
+        </a>
+        <p class="site-footer__desc">Building high-converting digital experiences, websites, and marketing strategies engineered to help your business grow.</p>
+        <div class="site-footer__contact-info">
+          <a href="tel:+919345743409" class="site-footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 9345743409
+          </a>
+          <a href="mailto:zennovasolution01@gmail.com" class="site-footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            zennovasolution01@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Quick Links</h4>
+        <ul class="site-footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#faq">FAQ &amp; Pricing</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Services</h4>
+        <ul class="site-footer__links">
+          <li><a href="services.html">Frontend Development</a></li>
+          <li><a href="services.html">Backend Development</a></li>
+          <li><a href="services.html">Full-Stack Apps</a></li>
+          <li><a href="services.html">UI/UX Design</a></li>
+          <li><a href="services.html">Social Media Marketing</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Industries -->
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Industries</h4>
+        <ul class="site-footer__links">
+          <li><a href="index.html#we-work-with">Jewellery &amp; Retail</a></li>
+          <li><a href="index.html#we-work-with">Photo Studios</a></li>
+          <li><a href="index.html#we-work-with">Clothing &amp; Fashion</a></li>
+          <li><a href="index.html#we-work-with">Restaurants &amp; Hotels</a></li>
+          <li><a href="index.html#we-work-with">Healthcare &amp; Fintech</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">&copy; 2026 Zen Nova Solutions. All rights reserved.</p>
+      <div class="site-footer__socials">
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 17" fill="currentColor"><path d="M23.498 2.186A3.016 3.016 0 0021.38.068C19.505-.384 12 -.384 12-.384s-7.505 0-9.38.452A3.016 3.016 0 00.502 2.186C.05 4.061.05 8 .05 8s0 3.94.452 5.814a3.016 3.016 0 002.118 2.118c1.875.452 9.38.452 9.38.452s7.505 0 9.38-.452a3.016 3.016 0 002.118-2.118C23.95 11.939 23.95 8 23.95 8s0-3.94-.452-5.814zM9.545 11.568V4.432L15.818 8l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       SCRIPTS
+       ========================================= -->
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/magic-bento.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ogl@1.0.6/dist/ogl.umd.js"></script>
+  <script src="js/specular-button.js"></script>
+  <script src="js/blur-text.js"></script>
+  <script src="js/click-spark.js"></script>
+
+</body>
+</html>

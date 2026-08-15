@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — Zen Nova Solutions</title>
+  <meta name="description" content="Frontend, backend, full-stack, UI/UX, video editing, maintenance, graphic design, social media — every service Zen Nova Solutions offers is built around what your business actually needs to grow." />
+  <meta name="keywords" content="web development services, frontend, backend, full stack, UI UX design, video editing, website maintenance, graphic design, social media marketing, Zen Nova Solutions, Tamil Nadu" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/magic-bento.css" />
+  <link rel="stylesheet" href="css/specular-button.css" />
+  <link rel="stylesheet" href="css/blur-text.css" />
+  <link rel="icon" href="assest/logo-mark.webp" type="image/webp" />
+
+  <style>
+    /* =============================================
+       SERVICES PAGE — Scoped Styles
+       ============================================= */
+
+    /* ---- Hero ---- */
+    .services-hero {
+      padding: 80px 68px 72px;
+      text-align: center;
+      background: linear-gradient(160deg, #ffffff 0%, rgba(255,243,230,0.35) 55%, rgba(255,230,204,0.18) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,115,0,0.06) 0%, transparent 70%);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .services-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .services-hero__eyebrow-line {
+      width: 32px;
+      height: 1px;
+      background: var(--color-primary);
+    }
+
+    .services-hero__eyebrow-text {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    .services-hero__heading {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 60px;
+      color: var(--color-dark-teal);
+      max-width: 780px;
+      margin: 0 auto 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .services-hero__sub {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 30px;
+      color: var(--color-focus-text);
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    .services-hero__actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ---- How We Work ---- */
+    .how-we-work {
+      padding: 80px 68px;
+      background: linear-gradient(180deg, #F8FAFB 0%, #ffffff 100%);
+    }
+
+    .how-we-work__header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .how-we-work__intro {
+      font-family: var(--font-primary);
+      font-size: 17px;
+      line-height: 28px;
+      color: var(--color-focus-text);
+      max-width: 620px;
+      margin: 0 auto 56px;
+      text-align: center;
+    }
+
+    .how-we-work__steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Connector line */
+    .how-we-work__steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(16.66% + 20px);
+      right: calc(16.66% + 20px);
+      height: 1px;
+      border-top: 1.6px dashed var(--color-primary);
+      z-index: 0;
+    }
+
+    .process-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-card__number {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid var(--color-primary);
+      box-shadow: 0 0 0 8px rgba(255,115,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .process-card:hover .process-card__number {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 10px rgba(255,115,0,0.12), 0 4px 20px rgba(255,115,0,0.2);
+    }
+
+    .process-card__label {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .process-card__title {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      color: var(--color-dark-teal);
+      margin-bottom: 12px;
+    }
+
+    .process-card__desc {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 24px;
+      color: var(--color-focus-text);
+    }
+
+    /* ---- Services Grid ---- */
+    .services-section {
+      padding: 80px 68px;
+      background: #ffffff;
+    }
+
+    .services-section__header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .services-full-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Service Card - premium redesign */
+    .svc-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: 16px;
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s;
+    }
+
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FF7300, #FF3E30);
+      border-radius: 16px 16px 0 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .svc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0, 49, 61, 0.09), 0 4px 12px rgba(0, 49, 61, 0.04);
+      border-color: rgba(255, 115, 0, 0.18);
+    }
+
+    .svc-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Featured first card */
+    .svc-card--featured {
+      border: 2px solid rgba(255,115,0,0.3);
+      background: linear-gradient(180deg, rgba(255,115,0,0.025) 0%, #ffffff 35%);
+    }
+
+    .svc-card--featured::before {
+      transform: scaleX(1);
+    }
+
+    .svc-card__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .svc-card__icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255,115,0,0.12) 0%, rgba(255,115,0,0.04) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+
+    .svc-card:hover .svc-card__icon-wrap {
+      background: linear-gradient(135deg, rgba(255,115,0,0.2) 0%, rgba(255,115,0,0.08) 100%);
+    }
+
+    .svc-card__num {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: rgba(255,115,0,0.5);
+      padding-top: 4px;
+    }
+
+    .svc-card__outcome-label {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .svc-card__title {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 28px;
+      color: var(--color-dark-teal);
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .svc-card__outcome {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 24px;
+      color: var(--color-focus-text);
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .svc-card__included-label {
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 14px;
+    }
+
+    .svc-card__list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+      flex: 1;
+    }
+
+    .svc-card__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--color-body);
+    }
+
+    .svc-card__list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .svc-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      background: var(--color-dark-teal);
+      color: #ffffff;
+      border-radius: 8px;
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: -0.1px;
+      transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+      align-self: flex-start;
+    }
+
+    .svc-card__cta:hover {
+      background: #073a42;
+      transform: translateX(3px);
+      box-shadow: 0 4px 14px rgba(5,46,52,0.2);
+    }
+
+    .svc-card__cta svg {
+      transition: transform 0.25s;
+    }
+
+    .svc-card__cta:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ---- Why This Matters ---- */
+    .why-matters-strip {
+      padding: 72px 68px;
+      background: linear-gradient(135deg, #052E34 0%, #083d47 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-matters-strip::before {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,115,0,0.1) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .why-matters-strip__inner {
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .why-matters-strip__eyebrow {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .why-matters-strip__heading {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 38px;
+      color: #ffffff;
+    }
+
+    .why-matters-strip__right p {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 28px;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 20px;
+    }
+
+    .why-matters-strip__right p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---- Not Sure Section ---- */
+    .not-sure {
+      padding: 80px 68px;
+      background: linear-gradient(180deg, #F8FAFB 0%, #ffffff 100%);
+      text-align: center;
+    }
+
+    .not-sure__card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: 20px;
+      padding: 56px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .not-sure__card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #FF7300, #FF3E30);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .not-sure__icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .not-sure__heading {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 34px;
+      color: var(--color-dark-teal);
+      margin-bottom: 16px;
+    }
+
+    .not-sure__text {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--color-focus-text);
+      margin-bottom: 32px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .not-sure__actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1100px) {
+      .services-hero { padding: 60px 40px 56px; }
+      .services-hero__heading { font-size: 42px; line-height: 50px; }
+      .how-we-work, .services-section, .why-matters-strip, .not-sure { padding: 60px 40px; }
+    }
+
+    @media (max-width: 900px) {
+      .services-full-grid { grid-template-columns: 1fr; max-width: 600px; }
+      .how-we-work__steps { grid-template-columns: 1fr; max-width: 420px; }
+      .how-we-work__steps::before { display: none; }
+      .why-matters-strip__inner { grid-template-columns: 1fr; gap: 32px; }
+      .services-hero__heading { font-size: 36px; line-height: 44px; }
+    }
+
+    @media (max-width: 640px) {
+      .services-hero { padding: 48px 20px 44px; }
+      .services-hero__heading { font-size: 30px; line-height: 38px; }
+      .how-we-work, .services-section, .why-matters-strip, .not-sure { padding: 48px 20px; }
+      .not-sure__card { padding: 40px 24px; }
+      .svc-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       1. ANNOUNCEMENT BAR
+       ========================================= -->
+  <div class="announcement-bar" id="announcement-bar">
+    <a href="tel:+919345743409" class="announcement-bar__phone">91+ 9345743409</a>
+    <div class="announcement-bar__center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <a href="mailto:zennovasolution01@gmail.com" class="announcement-bar__email">zennovasolution01@gmail.com</a>
+    </div>
+    <div class="announcement-bar__socials">
+      <a href="#" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 24 17" fill="white"><path d="M23.498 2.186A3.016 3.016 0 0021.38.068C19.505-.384 12-.384 12-.384s-7.505 0-9.38.452A3.016 3.016 0 00.502 2.186C.05 4.061.05 8 .05 8s0 3.94.452 5.814a3.016 3.016 0 002.118 2.118c1.875.452 9.38.452 9.38.452s7.505 0 9.38-.452a3.016 3.016 0 002.118-2.118C23.95 11.939 23.95 8 23.95 8s0-3.94-.452-5.814zM9.545 11.568V4.432L15.818 8l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- =========================================
+       2. NAVIGATION
+       ========================================= -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar__brand">
+      <img src="assest/logo-mark.webp" alt="Zen Nova Solutions Logo" class="navbar__logo" />
+      <span class="navbar__name">Zen Nova Solutions</span>
+    </a>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar__links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" style="color: var(--color-primary);">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#portfolio">Protofolio</a></li>
+      <li><a href="index.html#faq">Pricing</a></li>
+    </ul>
+    <a href="#cta-footer" class="navbar__contact">Contact</a>
+  </nav>
+
+  <!-- =========================================
+       3. PAGE HERO
+       ========================================= -->
+  <section class="services-hero">
+    <div class="services-hero__eyebrow">
+      <span class="services-hero__eyebrow-line"></span>
+      <span class="services-hero__eyebrow-text">Our Services</span>
+      <span class="services-hero__eyebrow-line"></span>
+    </div>
+    <h1 class="services-hero__heading">
+      Services Built Around<br />Outcomes, Not Deliverables
+    </h1>
+    <p class="services-hero__sub">
+      Every service we offer is designed to solve a specific business problem — not just check a box. From pixel-perfect interfaces to full-stack applications, we build what your business actually needs to grow.
+    </p>
+    <div class="services-hero__actions">
+      <a href="#services-list" class="btn-cta-primary">
+        Explore All Services
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="https://wa.me/919345743409" class="btn-cta-secondary" target="_blank" rel="noopener noreferrer" style="color: var(--color-dark-teal); border-color: rgba(5,46,52,0.25); background: transparent;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Talk on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================
+       4. HOW WE WORK
+       ========================================= -->
+  <section class="how-we-work" id="how-we-work">
+    <div class="how-we-work__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">OUR PROCESS</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">How We Work</h2>
+    </div>
+    <p class="how-we-work__intro">We don't believe in one-size-fits-all packages. Every project starts with a conversation about your goals, your customers, and what success looks like for your business.</p>
+
+    <div class="how-we-work__steps">
+      <div class="process-card">
+        <div class="process-card__number">🔍</div>
+        <div class="process-card__label">Step 01</div>
+        <div class="process-card__title">Understand</div>
+        <p class="process-card__desc">We start by learning your business, your audience, and what you're trying to achieve. No assumptions, no templates.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-card__number">🛠️</div>
+        <div class="process-card__label">Step 02</div>
+        <div class="process-card__title">Build</div>
+        <p class="process-card__desc">Once we know what matters, we design and develop around that — not around what looks good in a portfolio.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-card__number">🚀</div>
+        <div class="process-card__label">Step 03</div>
+        <div class="process-card__title">Support</div>
+        <p class="process-card__desc">Launch isn't the end. We're here for updates, optimizations, and whatever comes next as your business grows.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       5. SERVICES GRID
+       ========================================= -->
+  <section class="services-section" id="services-list">
+    <div class="services-section__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">WHAT WE OFFER</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">10 Services. One Studio.</h2>
+      <p class="section-subtext" style="margin-top: 12px;">Every service is outcome-first — built around what will actually move your business forward.</p>
+    </div>
+
+    <div class="services-full-grid">
+
+      <!-- 01. Frontend Development -->
+      <div class="svc-card svc-card--featured">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">💻</div>
+          <span class="svc-card__num">01</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">Frontend Development</h3>
+        <p class="svc-card__outcome">Pixel-accurate interfaces that load fast and feel effortless — built with the frameworks modern businesses run on.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>Responsive, mobile-first builds (React, HTML5, CSS3)</li>
+          <li>Interactive UI components and smooth animations</li>
+          <li>Cross-browser and cross-device testing</li>
+          <li>Performance-optimized, SEO-friendly markup</li>
+          <li>Accessibility best practices (WCAG compliance)</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Start Project
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 02. Backend Development -->
+      <div class="svc-card">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">⚙️</div>
+          <span class="svc-card__num">02</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">Backend Development</h3>
+        <p class="svc-card__outcome">The engine behind your website — secure, scalable systems that handle your data, logins, and business logic without breaking a sweat.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>Custom API development and third-party integrations</li>
+          <li>Database design and management (SQL, NoSQL)</li>
+          <li>Server-side logic and secure authentication</li>
+          <li>Third-party service integrations (payments, CRMs, email)</li>
+          <li>Cloud deployment and infrastructure setup</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Get Consultation
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 03. Full-Stack Development -->
+      <div class="svc-card">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">🌐</div>
+          <span class="svc-card__num">03</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">Full-Stack Development</h3>
+        <p class="svc-card__outcome">One team, start to finish — we build the complete web application, front to back, so nothing gets lost in handoff.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>End-to-end web app architecture</li>
+          <li>Frontend + backend built to work as one system</li>
+          <li>Deployment, hosting setup, and go-live support</li>
+          <li>Ongoing feature development post-launch</li>
+          <li>Performance monitoring and optimization</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Discuss Build
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 04. Software Development -->
+      <div class="svc-card">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">🧩</div>
+          <span class="svc-card__num">04</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">Software Development</h3>
+        <p class="svc-card__outcome">Beyond websites — custom tools and internal software built around how your business actually operates.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>Custom business tools and dashboards</li>
+          <li>Workflow automation software</li>
+          <li>Cloud-based and desktop applications</li>
+          <li>Legacy system upgrades and modernization</li>
+          <li>Integration with existing business systems</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Build Custom Tool
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 05. UI/UX Design -->
+      <div class="svc-card">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">🎨</div>
+          <span class="svc-card__num">05</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">UI/UX Design</h3>
+        <p class="svc-card__outcome">Clean, intuitive interfaces designed to make every digital interaction simple and engaging — not just pretty to look at.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>Website UI/UX design (desktop and mobile)</li>
+          <li>Mobile app design (iOS and Android)</li>
+          <li>Design systems and component libraries</li>
+          <li>User research and wireframing</li>
+          <li>Prototyping and usability testing</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Explore Design
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 06. Video Editing -->
+      <div class="svc-card">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">🎬</div>
+          <span class="svc-card__num">06</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">Video Editing</h3>
+        <p class="svc-card__outcome">High-quality videos crafted to capture attention and strengthen your brand presence — optimized for every platform.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>Instagram Reels and short-form content</li>
+          <li>Promotional videos and brand stories</li>
+          <li>Business and corporate videos</li>
+          <li>Color grading and sound design</li>
+          <li>Platform-specific formatting and optimization</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Order Videos
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 07. Website Maintenance -->
+      <div class="svc-card">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">🔧</div>
+          <span class="svc-card__num">07</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">Website Maintenance</h3>
+        <p class="svc-card__outcome">Reliable website support that keeps your business secure, updated, and running smoothly — so you can focus on running your business.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>Regular website updates and content changes</li>
+          <li>Bug fixes and security patches</li>
+          <li>Performance optimization and speed improvements</li>
+          <li>Backup management and disaster recovery</li>
+          <li>Ongoing technical support and monitoring</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Get Maintenance
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 08. Graphic Design -->
+      <div class="svc-card">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">🖼️</div>
+          <span class="svc-card__num">08</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">Graphic Design</h3>
+        <p class="svc-card__outcome">Creative visual designs that make your brand stand out and communicate with confidence — across every channel.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>Social media designs (posts, stories, covers)</li>
+          <li>Posters, banners, and print materials</li>
+          <li>Branding and marketing creatives</li>
+          <li>Logo design and brand identity</li>
+          <li>Marketing collateral and presentations</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Request Design
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 09. Social Media Management -->
+      <div class="svc-card">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">📱</div>
+          <span class="svc-card__num">09</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">Social Media Management</h3>
+        <p class="svc-card__outcome">Strategic digital campaigns designed to increase your reach, engagement, and business enquiries — not just vanity metrics.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>Content creation and scheduling</li>
+          <li>Social media marketing strategy</li>
+          <li>Growth and engagement tactics</li>
+          <li>Analytics and performance reporting</li>
+          <li>Community management and response</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Boost Local Reach
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 10. Poster Design -->
+      <div class="svc-card">
+        <div class="svc-card__header">
+          <div class="svc-card__icon-wrap">🗓️</div>
+          <span class="svc-card__num">10</span>
+        </div>
+        <div class="svc-card__outcome-label">Outcome</div>
+        <h3 class="svc-card__title">Poster Design</h3>
+        <p class="svc-card__outcome">Eye-catching posters and visual materials that communicate your message clearly and drive action — for events, promotions, or brand awareness.</p>
+        <div class="svc-card__included-label">What's included</div>
+        <ul class="svc-card__list">
+          <li>Event posters and promotional materials</li>
+          <li>Digital and print-ready formats</li>
+          <li>Custom illustrations and graphics</li>
+          <li>Brand-consistent design</li>
+          <li>Quick turnaround for time-sensitive projects</li>
+        </ul>
+        <a href="#cta-footer" class="svc-card__cta">
+          Design Poster
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+       6. WHY THIS MATTERS
+       ========================================= -->
+  <section class="why-matters-strip">
+    <div class="why-matters-strip__inner">
+      <div>
+        <div class="why-matters-strip__eyebrow">Why This Matters</div>
+        <h2 class="why-matters-strip__heading">We don't offer everything — just what we know how to do well.</h2>
+      </div>
+      <div class="why-matters-strip__right">
+        <p>We don't offer every service under the sun — just the ones we know how to do well. That focus means every project gets the attention it deserves, and you get work that actually moves your business forward.</p>
+        <p>Whether you need a single service or a complete digital presence, we're here to help you make smart decisions — not just sell you more stuff.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       7. NOT SURE WHICH SERVICE?
+       ========================================= -->
+  <section class="not-sure">
+    <div class="not-sure__card">
+      <div class="not-sure__icon">🤔</div>
+      <h2 class="not-sure__heading">Not Sure Which Service Fits?</h2>
+      <p class="not-sure__text">Talk to our team — we'll map out exactly what you need, with no obligation. Most conversations take 15 minutes and save you weeks of guesswork.</p>
+      <div class="not-sure__actions">
+        <a href="https://wa.me/919345743409" class="btn-cta-primary" target="_blank" rel="noopener noreferrer">
+          Start Your Project
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+        <a href="https://wa.me/919345743409" class="btn-cta-secondary" target="_blank" rel="noopener noreferrer" style="background: transparent; color: var(--color-dark-teal); border-color: rgba(5,46,52,0.25);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Talk on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       8. FINAL CTA BANNER
+       ========================================= -->
+  <section class="cta-footer" id="cta-footer">
+    <h2 class="cta-footer__heading">Ready to Build Something That Works?</h2>
+    <p class="cta-footer__text">No generic packages, no outsourced teams — just a straightforward conversation about what your business needs.</p>
+    <div class="cta-footer__buttons">
+      <a href="https://wa.me/919345743409" class="btn-cta-primary" target="_blank" rel="noopener noreferrer">
+        Book Free Consultation
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="https://wa.me/919345743409" class="btn-cta-secondary" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================
+       9. SITE FOOTER
+       ========================================= -->
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <div class="site-footer__col site-footer__brand">
+        <a href="index.html" class="site-footer__logo-link">
+          <img src="assest/logo-mark.webp" alt="Zen Nova Solutions" class="site-footer__logo" />
+          <span class="site-footer__brand-name">Zen Nova Solutions</span>
+        </a>
+        <p class="site-footer__desc">Building high-converting digital experiences, websites, and marketing strategies engineered to help your business grow.</p>
+        <div class="site-footer__contact-info">
+          <a href="tel:+919345743409" class="site-footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 9345743409
+          </a>
+          <a href="mailto:zennovasolution01@gmail.com" class="site-footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            zennovasolution01@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Quick Links</h4>
+        <ul class="site-footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#faq">FAQ &amp; Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Services</h4>
+        <ul class="site-footer__links">
+          <li><a href="services.html#services-list">Frontend Development</a></li>
+          <li><a href="services.html#services-list">Backend Development</a></li>
+          <li><a href="services.html#services-list">Full-Stack Apps</a></li>
+          <li><a href="services.html#services-list">UI/UX Design</a></li>
+          <li><a href="services.html#services-list">Social Media</a></li>
+          <li><a href="services.html#services-list">Video Editing</a></li>
+        </ul>
+      </div>
+
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Industries</h4>
+        <ul class="site-footer__links">
+          <li><a href="index.html#we-work-with">Jewellery &amp; Retail</a></li>
+          <li><a href="index.html#we-work-with">Photo Studios</a></li>
+          <li><a href="index.html#we-work-with">Clothing &amp; Fashion</a></li>
+          <li><a href="index.html#we-work-with">Restaurants &amp; Hotels</a></li>
+          <li><a href="index.html#we-work-with">Healthcare &amp; Fintech</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">&copy; 2026 Zen Nova Solutions. All rights reserved.</p>
+      <div class="site-footer__socials">
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 17" fill="currentColor"><path d="M23.498 2.186A3.016 3.016 0 0021.38.068C19.505-.384 12-.384 12-.384s-7.505 0-9.38.452A3.016 3.016 0 00.502 2.186C.05 4.061.05 8 .05 8s0 3.94.452 5.814a3.016 3.016 0 002.118 2.118c1.875.452 9.38.452 9.38.452s7.505 0 9.38-.452a3.016 3.016 0 002.118-2.118C23.95 11.939 23.95 8 23.95 8s0-3.94-.452-5.814zM9.545 11.568V4.432L15.818 8l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       SCRIPTS
+       ========================================= -->
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/magic-bento.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ogl@1.0.6/dist/ogl.umd.js"></script>
+  <script src="js/specular-button.js"></script>
+  <script src="js/blur-text.js"></script>
+  <script src="js/click-spark.js"></script>
+
+</body>
+</html>
