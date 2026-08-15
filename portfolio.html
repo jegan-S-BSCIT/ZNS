@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Zen Nova Solutions | Websites, Web Applications & Digital Experiences</title>
+  <meta name="description" content="Explore websites, e-commerce stores, web applications, dashboards, and product interfaces built by Zen Nova Solutions for growing businesses and digital ideas." />
+  <meta name="keywords" content="Zen Nova Solutions portfolio, web design Tamil Nadu, web development portfolio, UI UX design projects, e-commerce website portfolio" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/magic-bento.css" />
+  <link rel="stylesheet" href="css/specular-button.css" />
+  <link rel="stylesheet" href="css/blur-text.css" />
+  <link rel="icon" href="assest/logo-mark.webp" type="image/webp" />
+
+  <style>
+    /* =============================================
+       PORTFOLIO PAGE — Scoped Styles
+       ============================================= */
+
+    /* ---- Hero ---- */
+    .portfolio-hero {
+      padding: 80px 68px 64px;
+      text-align: center;
+      background: linear-gradient(160deg, #ffffff 0%, rgba(255,243,230,0.35) 55%, rgba(255,230,204,0.18) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-hero::before {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,115,0,0.06) 0%, transparent 70%);
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .portfolio-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .portfolio-hero__eyebrow-line {
+      width: 32px; height: 1px;
+      background: var(--color-primary);
+    }
+
+    .portfolio-hero__eyebrow-text {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    .portfolio-hero__heading {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 52px;
+      line-height: 60px;
+      color: var(--color-dark-teal);
+      max-width: 740px;
+      margin: 0 auto 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .portfolio-hero__sub {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+      color: var(--color-focus-text);
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+
+    .portfolio-hero__actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ---- Filter Tabs ---- */
+    .portfolio-filters {
+      padding: 20px 68px 0;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--color-border-light);
+      position: sticky;
+      top: 72px;
+      z-index: 50;
+    }
+
+    .filter-tab {
+      padding: 10px 20px;
+      border: none;
+      background: transparent;
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--color-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: -1px;
+    }
+
+    .filter-tab:hover {
+      color: var(--color-dark-teal);
+    }
+
+    .filter-tab.active {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+    }
+
+    /* ---- Portfolio Grid ---- */
+    .portfolio-section {
+      padding: 64px 68px 80px;
+      background: #ffffff;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Featured (spans 2 columns) */
+    .pf-card--featured {
+      grid-column: span 2;
+    }
+
+    /* Project Card */
+    .pf-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      cursor: pointer;
+    }
+
+    .pf-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0,49,61,0.11), 0 4px 16px rgba(0,49,61,0.04);
+    }
+
+    /* Image container */
+    .pf-card__img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #F0F3F5;
+    }
+
+    .pf-card--featured .pf-card__img-wrap {
+      height: 340px;
+    }
+
+    .pf-card:not(.pf-card--featured) .pf-card__img-wrap {
+      height: 220px;
+    }
+
+    .pf-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.5s ease, filter 0.3s;
+    }
+
+    .pf-card:hover .pf-card__img {
+      transform: scale(1.04);
+      filter: brightness(0.92);
+    }
+
+    /* Overlay on hover */
+    .pf-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(5,46,52,0.85) 100%);
+      opacity: 0;
+      transition: opacity 0.35s;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+    }
+
+    .pf-card:hover .pf-card__overlay {
+      opacity: 1;
+    }
+
+    .pf-card__view-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--color-primary);
+      color: #00181D;
+      border-radius: 8px;
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 13px;
+      transform: translateY(8px);
+      transition: transform 0.3s;
+    }
+
+    .pf-card:hover .pf-card__view-link {
+      transform: translateY(0);
+    }
+
+    /* Category pill on image */
+    .pf-card__category-pill {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 12px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-radius: 99px;
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-dark-teal);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Type badge */
+    .pf-card__type-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 3px 10px;
+      background: rgba(5,46,52,0.8);
+      backdrop-filter: blur(8px);
+      border-radius: 99px;
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Card body */
+    .pf-card__body {
+      padding: 20px 22px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pf-card__title {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+      color: var(--color-dark-teal);
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    .pf-card--featured .pf-card__title {
+      font-size: 22px;
+      line-height: 28px;
+    }
+
+    .pf-card__summary {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--color-focus-text);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .pf-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pf-tag {
+      padding: 4px 10px;
+      background: rgba(255,115,0,0.07);
+      color: var(--color-primary);
+      border-radius: 99px;
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ---- "Results Like This?" Band ---- */
+    .results-band {
+      padding: 72px 68px;
+      background: linear-gradient(135deg, #052E34 0%, #083d47 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .results-band::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,115,0,0.1) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .results-band__inner { position: relative; max-width: 680px; margin: 0 auto; }
+
+    .results-band__eyebrow {
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .results-band__heading {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .results-band__text {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 32px;
+    }
+
+    .results-band__actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ---- Portfolio FAQ ---- */
+    .portfolio-faq {
+      padding: 72px 68px;
+      background: #ffffff;
+    }
+
+    .portfolio-faq__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: 24px 22px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(255,115,0,0.25);
+      box-shadow: 0 4px 16px rgba(0,49,61,0.05);
+    }
+
+    .faq-item__q {
+      font-family: var(--font-secondary);
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 22px;
+      color: var(--color-dark-teal);
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .faq-item__q::before {
+      content: 'Q';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px; height: 22px;
+      background: var(--color-primary);
+      color: #fff;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .faq-item__a {
+      font-family: var(--font-primary);
+      font-size: 14px;
+      line-height: 22px;
+      color: var(--color-focus-text);
+      padding-left: 32px;
+    }
+
+    /* JS filter hide/show */
+    .pf-card[data-hidden="true"] {
+      display: none;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1100px) {
+      .portfolio-hero { padding: 60px 40px 48px; }
+      .portfolio-hero__heading { font-size: 40px; line-height: 48px; }
+      .portfolio-section { padding: 48px 40px 60px; }
+      .portfolio-filters { padding: 16px 40px 0; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .pf-card--featured { grid-column: span 2; }
+      .results-band, .portfolio-faq { padding: 56px 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .pf-card--featured { grid-column: span 1; }
+      .pf-card--featured .pf-card__img-wrap { height: 240px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .portfolio-hero__heading { font-size: 32px; line-height: 40px; }
+    }
+
+    @media (max-width: 640px) {
+      .portfolio-hero, .portfolio-section, .portfolio-filters,
+      .results-band, .portfolio-faq { padding-left: 20px; padding-right: 20px; }
+      .portfolio-filters { top: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       1. ANNOUNCEMENT BAR
+       ========================================= -->
+  <div class="announcement-bar" id="announcement-bar">
+    <a href="tel:+919345743409" class="announcement-bar__phone">91+ 9345743409</a>
+    <div class="announcement-bar__center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <a href="mailto:zennovasolution01@gmail.com" class="announcement-bar__email">zennovasolution01@gmail.com</a>
+    </div>
+    <div class="announcement-bar__socials">
+      <a href="#" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 24 17" fill="white"><path d="M23.498 2.186A3.016 3.016 0 0021.38.068C19.505-.384 12-.384 12-.384s-7.505 0-9.38.452A3.016 3.016 0 00.502 2.186C.05 4.061.05 8 .05 8s0 3.94.452 5.814a3.016 3.016 0 002.118 2.118c1.875.452 9.38.452 9.38.452s7.505 0 9.38-.452a3.016 3.016 0 002.118-2.118C23.95 11.939 23.95 8 23.95 8s0-3.94-.452-5.814zM9.545 11.568V4.432L15.818 8l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- =========================================
+       2. NAVIGATION
+       ========================================= -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar__brand">
+      <img src="assest/logo-mark.webp" alt="Zen Nova Solutions Logo" class="navbar__logo" />
+      <span class="navbar__name">Zen Nova Solutions</span>
+    </a>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar__links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html" style="color: var(--color-primary);">Portfolio</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+    </ul>
+    <a href="#cta-footer" class="navbar__contact">Contact</a>
+  </nav>
+
+  <!-- =========================================
+       3. HERO
+       ========================================= -->
+  <section class="portfolio-hero">
+    <div class="portfolio-hero__eyebrow">
+      <span class="portfolio-hero__eyebrow-line"></span>
+      <span class="portfolio-hero__eyebrow-text">Selected Work</span>
+      <span class="portfolio-hero__eyebrow-line"></span>
+    </div>
+    <h1 class="portfolio-hero__heading">Digital Experiences Built to Be Used</h1>
+    <p class="portfolio-hero__sub">Websites, web apps, dashboards, and digital brand experiences created by Zen Nova Solutions. Each project combines thoughtful design, practical functionality, and a clear purpose.</p>
+    <div class="portfolio-hero__actions">
+      <a href="#cta-footer" class="btn-cta-primary">
+        Start a Project
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="services.html" class="btn-cta-secondary" style="background: transparent; color: var(--color-dark-teal); border-color: rgba(5,46,52,0.25);">
+        View Services
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================
+       4. FILTER TABS
+       ========================================= -->
+  <div class="portfolio-filters" id="portfolio-filters">
+    <button class="filter-tab active" data-filter="all">All Work</button>
+    <button class="filter-tab" data-filter="website">Websites</button>
+    <button class="filter-tab" data-filter="ecommerce">E-Commerce</button>
+    <button class="filter-tab" data-filter="webapp">Web Applications</button>
+    <button class="filter-tab" data-filter="dashboard">Dashboards</button>
+    <button class="filter-tab" data-filter="concept">Concept Projects</button>
+  </div>
+
+  <!-- =========================================
+       5. PORTFOLIO GRID
+       ========================================= -->
+  <section class="portfolio-section" id="work">
+    <div class="portfolio-grid" id="portfolio-grid">
+
+      <!-- ── 01. Urban Steps (FEATURED) ── -->
+      <div class="pf-card pf-card--featured" data-category="ecommerce website">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/urban-steps.webp" alt="Urban Steps – Footwear E-commerce Website" class="pf-card__img" loading="eager" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">🛍️ E-Commerce</span>
+          <span class="pf-card__type-badge">Client Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">Urban Steps — A Storefront Designed for Confident Shopping</h2>
+          <p class="pf-card__summary">A footwear e-commerce experience focused on product discovery, visual clarity, and a smooth path from browsing to purchase. Clean retail aesthetic with strong product imagery and trust signals.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">E-Commerce</span>
+            <span class="pf-tag">UI/UX Design</span>
+            <span class="pf-tag">Responsive</span>
+            <span class="pf-tag">Retail</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 02. Saravana Studio ── -->
+      <div class="pf-card" data-category="website">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/saravana-studio.webp" alt="Saravana Studio – Photography Website" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">📷 Photography</span>
+          <span class="pf-card__type-badge">Client Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">Saravana Studio — A Warm Digital Home for Meaningful Moments</h2>
+          <p class="pf-card__summary">A photography website that lets imagery lead while guiding visitors toward services, gallery exploration, and booking. Warm editorial design.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Photography</span>
+            <span class="pf-tag">Business Website</span>
+            <span class="pf-tag">Gallery</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 03. Bharathi Phones & Frames ── -->
+      <div class="pf-card" data-category="website ecommerce">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/bharathi-phones-frames.webp" alt="Bharathi Phones & Frames – Retail Website" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">📱 Retail</span>
+          <span class="pf-card__type-badge">Client Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">Bharathi Phones &amp; Frames — Product Discovery with a Stronger Brand Presence</h2>
+          <p class="pf-card__summary">A bold, dark retail experience for a multi-category business — mobiles, accessories, photo frames, and gifts. High-contrast visual system with clear category navigation.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Retail</span>
+            <span class="pf-tag">Dark UI</span>
+            <span class="pf-tag">Multi-Category</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 04. VerifyAI ── -->
+      <div class="pf-card pf-card--featured" data-category="webapp concept">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-10 at 9.19.19 AM.jpeg" alt="VerifyAI – AI Review Analysis Web Application" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">🤖 AI Application</span>
+          <span class="pf-card__type-badge">Concept Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">VerifyAI — Making Review Analysis Easier to Understand</h2>
+          <p class="pf-card__summary">A focused AI product interface for analysing review authenticity. Dark, technical visual system with electric blue accents, strong typographic hierarchy, and a clear primary analysis action.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">AI Product</span>
+            <span class="pf-tag">Dark UI</span>
+            <span class="pf-tag">Web Application</span>
+            <span class="pf-tag">React</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 05. FoodDelivery ── -->
+      <div class="pf-card" data-category="ecommerce webapp">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-10 at 9.18.46 AM.jpeg" alt="FoodDelivery – Restaurant Ordering Web Application" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">🍔 Food Ordering</span>
+          <span class="pf-card__type-badge">Concept Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">FoodDelivery — A Restaurant Ordering Experience Built for Fast Decisions</h2>
+          <p class="pf-card__summary">A food ordering interface with category tabs, product cards with image/price, cart state visibility, and a dark, high-contrast ordering experience.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Food Tech</span>
+            <span class="pf-tag">Cart UI</span>
+            <span class="pf-tag">Dark Interface</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 06. Fitcore Club ── -->
+      <div class="pf-card" data-category="dashboard webapp">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-10 at 9.18.52 AM.jpeg" alt="Fitcore Club – Gym Management Portal" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">💪 Fitness</span>
+          <span class="pf-card__type-badge">Academic Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">Fitcore Club — A Clearer Way to Manage a Fitness Community</h2>
+          <p class="pf-card__summary">A gym management portal with membership tracking, class scheduling, and role-based access. Dark interface with bright green highlights and high-contrast fitness-oriented identity.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Management App</span>
+            <span class="pf-tag">Dashboard</span>
+            <span class="pf-tag">Dark UI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 07. Smart Auto Parts ── -->
+      <div class="pf-card" data-category="ecommerce webapp">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-10 at 9.18.54 AM.jpeg" alt="Smart Auto Parts – Auto Parts Marketplace" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">🚗 Marketplace</span>
+          <span class="pf-card__type-badge">Concept Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">Smart Auto Parts — Helping Customers Find the Right Part Faster</h2>
+          <p class="pf-card__summary">A search-led auto parts marketplace with category navigation, buyer-seller dual entry points, and marketplace trust metrics. Blue retail system with yellow CTA accents.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Marketplace</span>
+            <span class="pf-tag">Product Search</span>
+            <span class="pf-tag">React</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 08. GOLDe5 ── -->
+      <div class="pf-card" data-category="webapp dashboard concept">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/localhost_3000_ (38).png" alt="GOLDe5 – Gold & Silver Savings Mobile App" class="pf-card__img" style="object-position: center top;" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">💰 Fintech</span>
+          <span class="pf-card__type-badge">Product UI Concept</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">GOLDe5 — Turning a Savings Concept into a Mobile-First Experience</h2>
+          <p class="pf-card__summary">A mobile-first gold and silver savings experience with portfolio value, SIP setup, goal plans, and product discovery. Deep green and gold premium visual system.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Fintech</span>
+            <span class="pf-tag">Mobile UI</span>
+            <span class="pf-tag">Dashboard</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 09. FraudShield ── -->
+      <div class="pf-card" data-category="dashboard webapp concept">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-10 at 9.18.07 AM.jpeg" alt="FraudShield – Fraud Detection Dashboard" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">🛡️ Security</span>
+          <span class="pf-card__type-badge">Concept Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">FraudShield — A Fraud Analysis Dashboard</h2>
+          <p class="pf-card__summary">A comprehensive fraud detection dashboard with total analyses, fraud detection metrics, recent history table, and a clean start-analysis workflow. Dark interface, navy colour system.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Security</span>
+            <span class="pf-tag">Dashboard</span>
+            <span class="pf-tag">Dark UI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 10. MediTrack Pro ── -->
+      <div class="pf-card" data-category="dashboard concept">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-10 at 9.18.23 AM.jpeg" alt="MediTrack Pro Desktop – Medication Tracking Dashboard" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">🏥 Health</span>
+          <span class="pf-card__type-badge">Academic Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">MediTrack Pro Desktop — A Clearer Way to Track Medications</h2>
+          <p class="pf-card__summary">A medication tracking dashboard showing daily schedule, doses taken, missed doses, and system health status. Clean, accessible interface with green success indicators.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Healthcare</span>
+            <span class="pf-tag">Desktop App</span>
+            <span class="pf-tag">Dashboard</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 11. NASC EduPortal ── -->
+      <div class="pf-card" data-category="webapp dashboard">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-10 at 9.18.39 AM.jpeg" alt="NASC EduPortal – Academic Digital Platform" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">🎓 Education</span>
+          <span class="pf-card__type-badge">Academic Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">NASC EduPortal — An Institutional Academic Platform</h2>
+          <p class="pf-card__summary">A secure academic digital platform with role-based access for admin, faculty, and students. Clean institutional visual language with split-panel login interface.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Education</span>
+            <span class="pf-tag">Portal</span>
+            <span class="pf-tag">Role-Based</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 12. Student Leave System ── -->
+      <div class="pf-card" data-category="webapp">
+        <div class="pf-card__img-wrap">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-15 at 4.48.10 PM.jpeg" alt="Student Leave System – Web Application" class="pf-card__img" loading="lazy" />
+          <div class="pf-card__overlay">
+            <span class="pf-card__view-link">
+              View Case Study
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+          <span class="pf-card__category-pill">📋 Web App</span>
+          <span class="pf-card__type-badge">Academic Project</span>
+        </div>
+        <div class="pf-card__body">
+          <h2 class="pf-card__title">Student Leave System — Making Leave Requests Easier to Manage</h2>
+          <p class="pf-card__summary">A web-based leave application platform streamlining requests, approvals, and leave history. Institutional blue design with clear student and faculty workflows.</p>
+          <div class="pf-card__tags">
+            <span class="pf-tag">Web App</span>
+            <span class="pf-tag">Academic</span>
+            <span class="pf-tag">Workflow</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+       6. "RESULTS LIKE THIS?" BAND
+       ========================================= -->
+  <section class="results-band">
+    <div class="results-band__inner">
+      <div class="results-band__eyebrow">Want Results Like This?</div>
+      <h2 class="results-band__heading">Every project starts the same way — with your business first.</h2>
+      <p class="results-band__text">We learn your business, your audience, and what success looks like before we write a single line of code. If you've seen something here close to what you're building, let's talk about yours.</p>
+      <div class="results-band__actions">
+        <a href="https://wa.me/919345743409" class="btn-cta-primary" target="_blank" rel="noopener noreferrer">
+          Book Free Consultation
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+        <a href="https://wa.me/919345743409" class="btn-cta-secondary" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       7. FAQ
+       ========================================= -->
+  <section class="portfolio-faq">
+    <div class="portfolio-faq__header">
+      <div class="accent-line-group" style="justify-content: center; margin-bottom: 8px;">
+        <span class="accent-line"></span>
+        <span class="section-label" style="font-size: 14px; line-height: 1; letter-spacing: 2px; text-transform: uppercase;">COMMON QUESTIONS</span>
+        <span class="accent-line"></span>
+      </div>
+      <h2 class="section-heading">Portfolio FAQ</h2>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-item__q">Do you only work with businesses like the ones shown here?</div>
+        <p class="faq-item__a">No — these are our most recent projects. We work across e-commerce, services, retail, and hospitality. If your industry isn't shown yet, yours could be the next one.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q">Can I see more of a specific project?</div>
+        <p class="faq-item__a">Absolutely. Reach out and we're happy to walk you through any project in more detail, including pages and screens not shown here.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q">How long did these projects take?</div>
+        <p class="faq-item__a">Timelines vary by scope — typically 3–5 days for Starter, 7–10 days for Business, and 14–21 days for E-Commerce. See our <a href="pricing.html" style="color: var(--color-primary);">Pricing page</a> for full delivery windows.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q">Will my website look like one of these, or something original?</div>
+        <p class="faq-item__a">Every site is designed specifically around your business — these are examples of our design quality and approach, not templates we reuse.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       8. FINAL CTA BANNER
+       ========================================= -->
+  <section class="cta-footer" id="cta-footer">
+    <h2 class="cta-footer__heading">Have an Idea Worth Building?</h2>
+    <p class="cta-footer__text">Tell us what you're trying to create. We'll help you choose the right approach, define the scope, and turn the idea into a practical next step.</p>
+    <div class="cta-footer__buttons">
+      <a href="https://wa.me/919345743409" class="btn-cta-primary" target="_blank" rel="noopener noreferrer">
+        Start Your Project
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="https://wa.me/919345743409" class="btn-cta-secondary" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Talk on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================
+       9. SITE FOOTER
+       ========================================= -->
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <div class="site-footer__col site-footer__brand">
+        <a href="index.html" class="site-footer__logo-link">
+          <img src="assest/logo-mark.webp" alt="Zen Nova Solutions" class="site-footer__logo" />
+          <span class="site-footer__brand-name">Zen Nova Solutions</span>
+        </a>
+        <p class="site-footer__desc">Building high-converting digital experiences, websites, and marketing strategies engineered to help your business grow.</p>
+        <div class="site-footer__contact-info">
+          <a href="tel:+919345743409" class="site-footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 9345743409
+          </a>
+          <a href="mailto:zennovasolution01@gmail.com" class="site-footer__contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            zennovasolution01@gmail.com
+          </a>
+        </div>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Quick Links</h4>
+        <ul class="site-footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Services</h4>
+        <ul class="site-footer__links">
+          <li><a href="services.html#services-list">Frontend Development</a></li>
+          <li><a href="services.html#services-list">Backend Development</a></li>
+          <li><a href="services.html#services-list">Full-Stack Apps</a></li>
+          <li><a href="services.html#services-list">UI/UX Design</a></li>
+          <li><a href="services.html#services-list">Social Media</a></li>
+          <li><a href="services.html#services-list">Video Editing</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__title">Industries</h4>
+        <ul class="site-footer__links">
+          <li><a href="index.html#we-work-with">Jewellery &amp; Retail</a></li>
+          <li><a href="index.html#we-work-with">Photo Studios</a></li>
+          <li><a href="index.html#we-work-with">Clothing &amp; Fashion</a></li>
+          <li><a href="index.html#we-work-with">Restaurants &amp; Hotels</a></li>
+          <li><a href="index.html#we-work-with">Healthcare &amp; Fintech</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">&copy; 2026 Zen Nova Solutions. All rights reserved.</p>
+      <div class="site-footer__socials">
+        <a href="#" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       SCRIPTS
+       ========================================= -->
+  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/magic-bento.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ogl@1.0.6/dist/ogl.umd.js"></script>
+  <script src="js/specular-button.js"></script>
+  <script src="js/blur-text.js"></script>
+  <script src="js/click-spark.js"></script>
+
+  <script>
+    // ── Portfolio Filter Logic ──
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const pfCards = document.querySelectorAll('.pf-card');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.dataset.filter;
+
+        pfCards.forEach(card => {
+          if (filter === 'all') {
+            card.removeAttribute('data-hidden');
+            card.style.display = '';
+          } else {
+            const cats = card.dataset.category || '';
+            if (cats.includes(filter)) {
+              card.removeAttribute('data-hidden');
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
