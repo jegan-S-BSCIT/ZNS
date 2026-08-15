@@ -368,18 +368,11 @@ button {
 .hero__heading .grow {
   position: relative;
   display: inline-block;
-  background: linear-gradient(135deg, #FF7300 0%, #FFA800 40%, #FF3E30 80%, #FF7300 100%);
-  background-size: 250% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: growGradientShift 4s ease infinite;
+  color: #FF7300;
+  -webkit-text-fill-color: #FF7300;
   font-weight: 800;
-}
-
-@keyframes growGradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  text-shadow: 0 0 16px rgba(255, 115, 0, 0.45), 0 0 30px rgba(255, 115, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
 .hero__heading .grow::after {
@@ -391,7 +384,7 @@ button {
   height: 6px;
   background: linear-gradient(90deg, #FF7300 0%, #FFA800 50%, #FF3E30 100%);
   border-radius: var(--radius-full);
-  box-shadow: 0 2px 12px rgba(255, 115, 0, 0.6), 0 0 20px rgba(255, 115, 0, 0.35);
+  box-shadow: 0 2px 12px rgba(255, 115, 0, 0.7), 0 0 24px rgba(255, 115, 0, 0.4);
 }
 
 .grow__sparkle {

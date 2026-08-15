@@ -42,9 +42,19 @@
           }
         });
       } else if (node.nodeType === Node.ELEMENT_NODE) {
-        const clone = node.cloneNode(false);
-        Array.from(node.childNodes).forEach(child => processNode(child, clone));
-        parentTarget.appendChild(clone);
+        if (node.classList && node.classList.contains('grow')) {
+          const wordSpan = document.createElement('span');
+          wordSpan.className = `blur-text-word ${direction === 'bottom' ? 'blur-text-direction-bottom' : ''}`;
+          wordSpan.style.transitionDelay = `${wordIndex * delayStep}ms`;
+          const clone = node.cloneNode(true);
+          wordSpan.appendChild(clone);
+          parentTarget.appendChild(wordSpan);
+          wordIndex++;
+        } else {
+          const clone = node.cloneNode(false);
+          Array.from(node.childNodes).forEach(child => processNode(child, clone));
+          parentTarget.appendChild(clone);
+        }
       }
     }
 
