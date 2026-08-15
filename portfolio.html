@@ -86,41 +86,107 @@
       flex-wrap: wrap;
     }
 
-    /* ---- Filter Tabs ---- */
+    /* ============================================================
+       GLASS FILTER PILL  (Apple-style GlassSurface port)
+       ============================================================ */
+
+    /* Outer positioning wrapper — floats centered below hero */
     .portfolio-filters {
-      padding: 20px 68px 0;
-      background: #ffffff;
       display: flex;
       justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid var(--color-border-light);
+      padding: 28px 20px 0;
+      background: transparent;
       position: sticky;
-      top: 72px;
-      z-index: 50;
+      top: 76px;
+      z-index: 200;
+      pointer-events: none; /* let the pill itself catch events */
     }
 
+    /* The glass pill container */
+    .pf-glass-pill {
+      pointer-events: all;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      padding: 5px 6px;
+      border-radius: 99px;
+      position: relative;
+      /* Solid-first base so it's always readable over dark content */
+      background: rgba(255, 255, 255, 0.92);
+      border: 1.5px solid rgba(5, 46, 52, 0.10);
+      /* Glass blur on top */
+      backdrop-filter: blur(20px) saturate(2) brightness(1.08);
+      -webkit-backdrop-filter: blur(20px) saturate(2) brightness(1.08);
+      /* SVG displacement (Chrome/Edge only) layered on */
+      /* backdrop-filter: url(#pf-glass-filter) saturate(1.8) blur(16px); */
+      box-shadow:
+        0 4px 28px rgba(5,46,52,0.13),
+        0 1px 0 rgba(255,255,255,1) inset,
+        0 -1px 0 rgba(0,0,0,0.06) inset,
+        0 0 0 1px rgba(255,255,255,0.7) inset;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .pf-glass-pill:hover {
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow:
+        0 8px 36px rgba(5,46,52,0.17),
+        0 1px 0 rgba(255,255,255,1) inset,
+        0 -1px 0 rgba(0,0,0,0.06) inset;
+    }
+
+    /* Individual filter tab */
     .filter-tab {
-      padding: 10px 20px;
+      position: relative;
+      padding: 9px 18px;
       border: none;
       background: transparent;
       font-family: var(--font-primary);
       font-weight: 600;
       font-size: 13px;
-      color: var(--color-muted);
+      /* Clearly visible dark text on the white pill */
+      color: #1c3a42;
       cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-      margin-bottom: -1px;
+      border-radius: 99px;
+      transition: color 0.22s ease;
+      z-index: 1;
+      white-space: nowrap;
+      letter-spacing: 0.2px;
+      user-select: none;
+      -webkit-user-select: none;
     }
 
     .filter-tab:hover {
-      color: var(--color-dark-teal);
+      color: var(--color-primary);
     }
 
+    /* Active state — sliding pill indicator */
     .filter-tab.active {
-      color: var(--color-primary);
-      border-bottom-color: var(--color-primary);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* The orange sliding indicator behind the active tab */
+    .pf-pill-indicator {
+      position: absolute;
+      top: 5px;
+      left: 6px;
+      height: calc(100% - 10px);
+      background: linear-gradient(135deg, #FF7300 0%, #FF9433 100%);
+      border-radius: 99px;
+      box-shadow: 0 2px 12px rgba(255,115,0,0.45);
+      transition: left 0.35s cubic-bezier(0.4,0,0.2,1), width 0.35s cubic-bezier(0.4,0,0.2,1);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hidden SVG filter element */
+    .pf-glass-svg {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      pointer-events: none;
     }
 
     /* ---- Portfolio Grid ---- */
@@ -604,16 +670,40 @@
   </section>
 
   <!-- =========================================
-       4. FILTER TABS
+       4. GLASS FILTER PILL + SVG Displacement Map
        ========================================= -->
-  <div class="portfolio-filters" id="portfolio-filters">
-    <button class="filter-tab active" data-filter="all">All Work</button>
-    <button class="filter-tab" data-filter="website">Websites</button>
-    <button class="filter-tab" data-filter="ecommerce">E-Commerce</button>
-    <button class="filter-tab" data-filter="webapp">Web Applications</button>
-    <button class="filter-tab" data-filter="dashboard">Dashboards</button>
-    <button class="filter-tab" data-filter="concept">Concept Projects</button>
+
+  <!-- Hidden SVG — provides the glass distortion filter used by backdrop-filter -->
+  <svg class="pf-glass-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <filter id="pf-glass-filter" color-interpolation-filters="sRGB" x="0%" y="0%" width="100%" height="100%">
+        <feImage id="pf-fe-image" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="map" />
+        <feDisplacementMap in="SourceGraphic" in2="map" id="pf-red" scale="-180" xChannelSelector="R" yChannelSelector="G" result="dispRed" />
+        <feColorMatrix in="dispRed" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="red" />
+        <feDisplacementMap in="SourceGraphic" in2="map" id="pf-green" scale="-170" xChannelSelector="R" yChannelSelector="G" result="dispGreen" />
+        <feColorMatrix in="dispGreen" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="green" />
+        <feDisplacementMap in="SourceGraphic" in2="map" id="pf-blue" scale="-160" xChannelSelector="R" yChannelSelector="G" result="dispBlue" />
+        <feColorMatrix in="dispBlue" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="blue" />
+        <feBlend in="red" in2="green" mode="screen" result="rg" />
+        <feBlend in="rg" in2="blue" mode="screen" result="output" />
+        <feGaussianBlur in="output" stdDeviation="0.5" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="portfolio-filters" id="portfolio-filters" role="navigation" aria-label="Filter projects by category">
+    <div class="pf-glass-pill" id="pf-glass-pill">
+      <!-- Sliding orange indicator -->
+      <div class="pf-pill-indicator" id="pf-pill-indicator"></div>
+      <button class="filter-tab active" data-filter="all">All Work</button>
+      <button class="filter-tab" data-filter="website">Websites</button>
+      <button class="filter-tab" data-filter="ecommerce">E-Commerce</button>
+      <button class="filter-tab" data-filter="webapp">Web Applications</button>
+      <button class="filter-tab" data-filter="dashboard">Dashboards</button>
+      <button class="filter-tab" data-filter="concept">Concept Projects</button>
+    </div>
   </div>
+
 
   <!-- =========================================
        5. PORTFOLIO GRID
@@ -1095,33 +1185,81 @@
   <script src="js/click-spark.js"></script>
 
   <script>
-    // ── Portfolio Filter Logic ──
-    const filterTabs = document.querySelectorAll('.filter-tab');
-    const pfCards = document.querySelectorAll('.pf-card');
+    // ── Glass Pill: Generate SVG displacement map ──
+    (function () {
+      const pill = document.getElementById('pf-glass-pill');
+      const feImg = document.getElementById('pf-fe-image');
+      if (!pill || !feImg) return;
+
+      function buildMap() {
+        const rect = pill.getBoundingClientRect();
+        const w = rect.width || 600;
+        const h = rect.height || 48;
+        const r = h / 2; // full pill radius
+        const edge = Math.min(w, h) * 0.035;
+
+        const svg = `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="pg-rx" x1="100%" y1="0%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#0000"/>
+              <stop offset="100%" stop-color="red"/>
+            </linearGradient>
+            <linearGradient id="pg-by" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#0000"/>
+              <stop offset="100%" stop-color="blue"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="${w}" height="${h}" fill="black"/>
+          <rect x="0" y="0" width="${w}" height="${h}" rx="${r}" fill="url(#pg-rx)"/>
+          <rect x="0" y="0" width="${w}" height="${h}" rx="${r}" fill="url(#pg-by)" style="mix-blend-mode:difference"/>
+          <rect x="${edge}" y="${edge}" width="${w - edge * 2}" height="${h - edge * 2}" rx="${r}"
+                fill="hsl(0 0% 50% / 0.93)" style="filter:blur(11px)"/>
+        </svg>`;
+        feImg.setAttribute('href', 'data:image/svg+xml,' + encodeURIComponent(svg));
+      }
+
+      buildMap();
+      new ResizeObserver(() => setTimeout(buildMap, 0)).observe(pill);
+    })();
+
+    // ── Portfolio Filter + Sliding Indicator ──
+    const filterTabs  = document.querySelectorAll('.filter-tab');
+    const pfCards     = document.querySelectorAll('.pf-card');
+    const indicator   = document.getElementById('pf-pill-indicator');
+
+    function moveIndicator(tab) {
+      if (!indicator || !tab) return;
+      const pill    = document.getElementById('pf-glass-pill');
+      const pillRect = pill.getBoundingClientRect();
+      const tabRect  = tab.getBoundingClientRect();
+      indicator.style.left  = (tabRect.left - pillRect.left) + 'px';
+      indicator.style.width = tabRect.width + 'px';
+    }
+
+    // Set initial indicator on page load
+    window.addEventListener('load', () => {
+      const active = document.querySelector('.filter-tab.active');
+      moveIndicator(active);
+    });
 
     filterTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         filterTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
+        moveIndicator(tab);
 
         const filter = tab.dataset.filter;
-
         pfCards.forEach(card => {
           if (filter === 'all') {
-            card.removeAttribute('data-hidden');
             card.style.display = '';
           } else {
             const cats = card.dataset.category || '';
-            if (cats.includes(filter)) {
-              card.removeAttribute('data-hidden');
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
+            card.style.display = cats.includes(filter) ? '' : 'none';
           }
         });
       });
     });
   </script>
+
 </body>
 </html>
