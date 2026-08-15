@@ -1,0 +1,114 @@
+/* =============================================
+   MAGIC BENTO — Adapted for Zen Nova Solutions
+   Glow color: #FF7300 (255, 115, 0)
+   ============================================= */
+
+:root {
+  --bento-glow-color: 255, 115, 0;
+  --bento-glow-primary: rgba(255, 115, 0, 1);
+  --bento-glow-soft: rgba(255, 115, 0, 0.2);
+  --bento-glow-border: rgba(255, 115, 0, 0.8);
+  --bento-border-color: rgba(0, 49, 61, 0.1);
+}
+
+/* ---- Card base enhancements ---- */
+.magic-bento-target {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* ---- Border glow that follows cursor ---- */
+.magic-bento-target.bento-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 5px;
+  background: radial-gradient(
+    var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+    rgba(var(--bento-glow-color), calc(var(--glow-intensity) * 0.75)) 0%,
+    rgba(var(--bento-glow-color), calc(var(--glow-intensity) * 0.35)) 30%,
+    transparent 60%
+  );
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.magic-bento-target.bento-glow:hover::after {
+  opacity: 1;
+}
+
+.magic-bento-target.bento-glow:hover {
+  box-shadow:
+    0 4px 24px rgba(255, 115, 0, 0.12),
+    0 0 40px rgba(255, 115, 0, 0.06);
+}
+
+/* ---- Particle dots ---- */
+.bento-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(var(--bento-glow-color), 1);
+  box-shadow: 0 0 6px rgba(var(--bento-glow-color), 0.6);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.bento-particle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(var(--bento-glow-color), 0.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* ---- Global spotlight ---- */
+.bento-spotlight {
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle,
+    rgba(var(--bento-glow-color), 0.12) 0%,
+    rgba(var(--bento-glow-color), 0.06) 15%,
+    rgba(var(--bento-glow-color), 0.03) 25%,
+    rgba(var(--bento-glow-color), 0.015) 40%,
+    rgba(var(--bento-glow-color), 0.005) 65%,
+    transparent 70%
+  );
+  z-index: 200;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+
+/* ---- Ripple click effect ---- */
+.bento-ripple {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+}

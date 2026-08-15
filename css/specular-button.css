@@ -1,0 +1,26 @@
+/* =============================================
+   SPECULAR BUTTON — Styling for Vanilla WebGL
+   ============================================= */
+
+.specular-button-host {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.specular-button__fx {
+  position: absolute;
+  inset: -20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.specular-button__fx canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.specular-button-host > *:not(.specular-button__fx) {
+  position: relative;
+  z-index: 2;
+}

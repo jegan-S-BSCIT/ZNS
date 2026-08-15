@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zen Nova Solutions — We Build Digital Experiences That Help Businesses Grow</title>
+  <meta name="description" content="Zen Nova Solutions builds high-converting websites, e-commerce platforms, mobile apps, and digital marketing solutions to help your business grow online." />
+  <meta name="keywords" content="web development, UI/UX design, digital marketing, website maintenance, Zen Nova Solutions" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/magic-bento.css" />
+  <link rel="stylesheet" href="css/specular-button.css" />
+  <link rel="stylesheet" href="css/blur-text.css" />
+  <link rel="icon" href="assest/logo-mark.webp" type="image/webp" />
+</head>
+<body>
+
+  <!-- =========================================
+       1. ANNOUNCEMENT BAR
+       ========================================= -->
+  <div class="announcement-bar" id="announcement-bar">
+    <a href="tel:+919345743409" class="announcement-bar__phone">91+ 9345743409</a>
+    <div class="announcement-bar__center">
+      <!-- mail icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <a href="mailto:zennovasolution01@gmail.com" class="announcement-bar__email">zennovasolution01@gmail.com</a>
+    </div>
+    <div class="announcement-bar__socials">
+      <!-- Facebook -->
+      <a href="#" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <!-- Instagram -->
+      <a href="#" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- YouTube -->
+      <a href="#" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 24 17" fill="white"><path d="M23.498 2.186A3.016 3.016 0 0021.38.068C19.505-.384 12 -.384 12-.384s-7.505 0-9.38.452A3.016 3.016 0 00.502 2.186C.05 4.061.05 8 .05 8s0 3.94.452 5.814a3.016 3.016 0 002.118 2.118c1.875.452 9.38.452 9.38.452s7.505 0 9.38-.452a3.016 3.016 0 002.118-2.118C23.95 11.939 23.95 8 23.95 8s0-3.94-.452-5.814zM9.545 11.568V4.432L15.818 8l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- =========================================
+       2. NAVIGATION
+       ========================================= -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="navbar__brand">
+      <img src="assest/logo-mark.webp" alt="Zen Nova Solutions Logo" class="navbar__logo" />
+      <span class="navbar__name">Zen Nova Solutions</span>
+    </a>
+
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="navbar__links" id="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#what-we-do">Services</a></li>
+      <li><a href="#our-focus">About</a></li>
+      <li><a href="#portfolio">Protofolio</a></li>
+      <li><a href="#faq">Pricing</a></li>
+    </ul>
+
+    <a href="#cta-footer" class="navbar__contact">Contact</a>
+  </nav>
+
+  <!-- =========================================
+       3. HERO SECTION
+       ========================================= -->
+  <section class="hero" id="hero">
+    <div class="hero__content">
+      <div class="hero__accent">
+        <span class="hero__accent-line"></span>
+      </div>
+      <h1 class="hero__heading">
+        We build digital<br />
+        experiences that help<br />
+        businesses <span class="grow">grow</span>.
+      </h1>
+      <p class="hero__description">
+        From high-converting websites and e-commerce platforms to branding and digital marketing, Zen Nova Solutions turns business ideas into powerful digital experiences.
+      </p>
+      <a href="#cta-footer" class="hero__cta">
+        Start a Project
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+    </div>
+
+    <!-- Orbit Visual -->
+    <div class="hero__visual">
+      <div class="orbit-wrapper">
+        <!-- Outer orbit ring with tech dots -->
+        <div class="orbit-ring orbit-ring--outer">
+          <div class="orbit-dot orbit-dot--1" title="SAP / Azure">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="SAP / Azure" />
+          </div>
+          <div class="orbit-dot orbit-dot--2" title="CSS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+          </div>
+          <div class="orbit-dot orbit-dot--3" title="HTML">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+          </div>
+          <div class="orbit-dot orbit-dot--4" title="React">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+          </div>
+        </div>
+
+        <!-- Middle orbit ring with Figma and Python -->
+        <div class="orbit-ring orbit-ring--middle">
+          <div class="orbit-dot orbit-dot--figma" title="Figma">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+          </div>
+          <div class="orbit-dot orbit-dot--python" title="Python">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+          </div>
+        </div>
+
+        <!-- Inner orbit ring with tech dots -->
+        <div class="orbit-ring orbit-ring--inner">
+          <div class="orbit-dot orbit-dot--5" title="JavaScript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+          </div>
+          <div class="orbit-dot orbit-dot--6" title="PHP">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" />
+          </div>
+        </div>
+
+        <!-- Center logo -->
+        <div class="orbit-center">
+          <div class="orbit-center__logo">
+            <img src="assest/logo-mark.webp" alt="Zen Nova Solutions" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       3b. WE WORK WITH — Marquee
+       ========================================= -->
+  <div class="we-work-with">
+    <div class="we-work-with__inner">
+      <span class="we-work-with__label">WE WORK WITH</span>
+      <div class="marquee-container">
+        <div class="marquee-track" id="marquee-track">
+          <span class="marquee-item">Jewellery</span>
+          <span class="marquee-item">Photo Studios</span>
+          <span class="marquee-item">Clothing &amp; Fashion</span>
+          <span class="marquee-item">Restaurants</span>
+          <span class="marquee-item">Healthcare</span>
+          <span class="marquee-item">Real Estate</span>
+          <span class="marquee-item">Education</span>
+          <span class="marquee-item">Fintech</span>
+          <!-- duplicate for seamless loop -->
+          <span class="marquee-item">Jewellery</span>
+          <span class="marquee-item">Photo Studios</span>
+          <span class="marquee-item">Clothing &amp; Fashion</span>
+          <span class="marquee-item">Restaurants</span>
+          <span class="marquee-item">Healthcare</span>
+          <span class="marquee-item">Real Estate</span>
+          <span class="marquee-item">Education</span>
+          <span class="marquee-item">Fintech</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================
+       4. OUR FOCUS
+       ========================================= -->
+  <section class="our-focus" id="our-focus">
+    <h2 class="section-label">OUR FOCUS</h2>
+    <h3 class="section-heading">Building Digital Experiences With Purpose</h3>
+    <p class="section-subtext">
+      We align our creative and technical expertise with your core business objectives to deliver measurable results.
+    </p>
+    <div class="focus-cards">
+      <div class="focus-card">
+        <div class="focus-card__icon">🏢</div>
+        <span class="focus-card__title">Business First</span>
+      </div>
+      <div class="focus-card">
+        <div class="focus-card__icon">🎨</div>
+        <span class="focus-card__title">Creative by Design</span>
+      </div>
+      <div class="focus-card">
+        <div class="focus-card__icon">⚡</div>
+        <span class="focus-card__title">Built for Performance</span>
+      </div>
+      <div class="focus-card">
+        <div class="focus-card__icon">🤝</div>
+        <span class="focus-card__title">Transparent Partnership</span>
+      </div>
+      <div class="focus-card">
+        <div class="focus-card__icon">💡</div>
+        <span class="focus-card__title">Technology That Matters</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       5. WHAT WE DO
+       ========================================= -->
+  <section class="what-we-do" id="what-we-do">
+    <div class="what-we-do__header">
+      <div class="accent-line-group">
+        <span class="accent-line accent-line--dark"></span>
+      </div>
+      <h2 class="section-label">WHAT WE DO</h2>
+      <h3 class="what-we-do__subtitle">
+        We don't just build websites. We build digital<br />
+        experiences that help businesses grow.
+      </h3>
+    </div>
+
+    <div class="service-grid">
+      <!-- Card 1: Website Development (Featured) -->
+      <div class="service-card service-card--featured">
+        <img src="assest/image.png" alt="Website Development" class="service-card__icon" />
+        <h4 class="service-card__title">Website Development</h4>
+        <p class="service-card__desc">Fast, secure and search-friendly websites engineered to turn visitors into enquiries.</p>
+        <ul class="service-card__list">
+          <li>Business &amp; corporate sites</li>
+          <li>Landing pages</li>
+          <li>Web applications</li>
+        </ul>
+        <a href="#" class="service-card__link">Learn more <span class="service-card__link-arrow">→</span></a>
+      </div>
+
+      <!-- Card 2: UI/UX Design -->
+      <div class="service-card">
+        <img src="assest/image copy.png" alt="UI/UX Design" class="service-card__icon" />
+        <h4 class="service-card__title">UI/UX Design</h4>
+        <p class="service-card__desc">Clean, intuitive interfaces designed to make every digital interaction simple and engaging.</p>
+        <ul class="service-card__list">
+          <li>Website UI/UX</li>
+          <li>Mobile App Design</li>
+          <li>Design Systems</li>
+        </ul>
+        <a href="#" class="service-card__link">Learn more <span class="service-card__link-arrow">→</span></a>
+      </div>
+
+      <!-- Card 3: Video Editing -->
+      <div class="service-card">
+        <img src="assest/image copy 3.png" alt="Video Editing" class="service-card__icon" />
+        <h4 class="service-card__title">Video Editing</h4>
+        <p class="service-card__desc">Producing high-quality videos crafted to capture attention and strengthen your brand presence.</p>
+        <ul class="service-card__list">
+          <li>Instagram Reels</li>
+          <li>Promotional Videos</li>
+          <li>Business &amp; Brand Videos</li>
+        </ul>
+        <a href="#" class="service-card__link">Learn more <span class="service-card__link-arrow">→</span></a>
+      </div>
+
+      <!-- Card 4: Website Maintenance -->
+      <div class="service-card">
+        <img src="assest/image copy 4.png" alt="Website Maintenance" class="service-card__icon" />
+        <h4 class="service-card__title">Website Maintenance</h4>
+        <p class="service-card__desc">Reliable website support that keeps your business secure, updated and running smoothly.</p>
+        <ul class="service-card__list">
+          <li>Website Updates</li>
+          <li>Bug Fixes &amp; Security</li>
+          <li>Performance Optimization</li>
+        </ul>
+        <a href="#" class="service-card__link">Learn more <span class="service-card__link-arrow">→</span></a>
+      </div>
+
+      <!-- Card 5: Graphic Design -->
+      <div class="service-card">
+        <img src="assest/image copy 2.png" alt="Graphic Design" class="service-card__icon" />
+        <h4 class="service-card__title">Graphic Design</h4>
+        <p class="service-card__desc">Creative visual designs that make your brand stand out and communicate with confidence.</p>
+        <ul class="service-card__list">
+          <li>Social Media Designs</li>
+          <li>Posters &amp; Banners</li>
+          <li>Branding &amp; Marketing Creatives</li>
+        </ul>
+        <a href="#" class="service-card__link">Learn more <span class="service-card__link-arrow">→</span></a>
+      </div>
+
+      <!-- Card 6: Social Media Management -->
+      <div class="service-card">
+        <img src="assest/image copy 5.png" alt="Social Media Management" class="service-card__icon" />
+        <h4 class="service-card__title">Social Media Management</h4>
+        <p class="service-card__desc">Strategic digital campaigns designed to increase your reach, engagement and business enquiries.</p>
+        <ul class="service-card__list">
+          <li>Content Creation</li>
+          <li>Social Media Marketing</li>
+          <li>Growth &amp; Engagement Strategy</li>
+        </ul>
+        <a href="#" class="service-card__link">Learn more <span class="service-card__link-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       6. WORKING PROCESS
+       ========================================= -->
+  <section class="working-process" id="working-process">
+    <div class="working-process__header">
+      <div class="accent-line-group">
+        <span class="accent-line accent-line--dark"></span>
+      </div>
+      <h2 class="section-label">Our Working Process</h2>
+      <h3 class="working-process__subtitle">From Idea to Digital Growth</h3>
+    </div>
+
+    <div class="process-timeline">
+      <div class="process-step">
+        <div class="process-step__circle">
+          <!-- Research icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <div class="process-step__dot"></div>
+        <span class="process-step__label">Research</span>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__circle">
+          <!-- Planning icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="process-step__dot"></div>
+        <span class="process-step__label">Planning</span>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__circle">
+          <!-- Design icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+        </div>
+        <div class="process-step__dot"></div>
+        <span class="process-step__label">Design</span>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__circle">
+          <!-- Development icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="process-step__dot"></div>
+        <span class="process-step__label">Development</span>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__circle process-step__circle--active">
+          <!-- Testing icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="process-step__dot"></div>
+        <span class="process-step__label">Testing</span>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__circle">
+          <!-- Promote icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#FF7300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="process-step__dot"></div>
+        <span class="process-step__label">Promote</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       7. PORTFOLIO
+       ========================================= -->
+  <section class="portfolio" id="portfolio">
+    <div class="portfolio__header">
+      <h2>What we've built for our clients</h2>
+      <p>Real projects, real businesses — designed end to end by our studio.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <!-- Card 1: Run Beyond Limits / Urban Steps -->
+      <div class="portfolio-card">
+        <div class="portfolio-card__image">
+          <img src="assest/poetfilio/urban-steps.webp" alt="Urban Steps E-Commerce" />
+        </div>
+        <div class="portfolio-card__body">
+          <div class="portfolio-card__tags">
+            <span class="portfolio-card__tag portfolio-card__tag--ecom">🛒 E-Commerce</span>
+          </div>
+          <h4 class="portfolio-card__title">Urban Steps</h4>
+          <p class="portfolio-card__desc">A clean footwear store with fast product browsing and a checkout built for mobile shoppers.</p>
+          <a href="#" class="portfolio-card__view">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Saravana Studio -->
+      <div class="portfolio-card">
+        <div class="portfolio-card__image">
+          <img src="assest/poetfilio/saravana-studio.webp" alt="Saravana Studio" />
+        </div>
+        <div class="portfolio-card__body">
+          <div class="portfolio-card__tags">
+            <span class="portfolio-card__tag portfolio-card__tag--photo">📷 Photography</span>
+          </div>
+          <h4 class="portfolio-card__title">Saravana Studio</h4>
+          <p class="portfolio-card__desc">An editorial portfolio site that lets wedding photography easy, with effective gallery navigation.</p>
+          <a href="#" class="portfolio-card__view">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Bharathi Phones & Frames -->
+      <div class="portfolio-card">
+        <div class="portfolio-card__image">
+          <img src="assest/poetfilio/bharathi-phones-frames.webp" alt="Bharathi Phones & Frames" />
+        </div>
+        <div class="portfolio-card__body">
+          <div class="portfolio-card__tags">
+            <span class="portfolio-card__tag portfolio-card__tag--retail">📱 Retail</span>
+          </div>
+          <h4 class="portfolio-card__title">Bharathi Phones &amp; Frames</h4>
+          <p class="portfolio-card__desc">A bright multi-category storefront for mobiles, gifts and custom photo frames with local enquiry flow.</p>
+          <a href="#" class="portfolio-card__view">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Card 4: Amrutha Hotel -->
+      <div class="portfolio-card">
+        <div class="portfolio-card__image">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-10 at 9.18.46 AM.jpeg" alt="Food Delivery App" />
+        </div>
+        <div class="portfolio-card__body">
+          <div class="portfolio-card__tags">
+            <span class="portfolio-card__tag portfolio-card__tag--hotel">🍽️ Restaurant</span>
+          </div>
+          <h4 class="portfolio-card__title">Amrutha Hotel</h4>
+          <p class="portfolio-card__desc">An appetising South Indian restaurant site with a different digital menu, catering enquiries and live ordering.</p>
+          <a href="#" class="portfolio-card__view">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Card 5: Saravana Studio (duplicate / second project) -->
+      <div class="portfolio-card">
+        <div class="portfolio-card__image">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-10 at 9.18.23 AM.jpeg" alt="MediTrack Pro" />
+        </div>
+        <div class="portfolio-card__body">
+          <div class="portfolio-card__tags">
+            <span class="portfolio-card__tag portfolio-card__tag--fintech">💊 Healthcare</span>
+          </div>
+          <h4 class="portfolio-card__title">MediTrack Pro</h4>
+          <p class="portfolio-card__desc">A medicine reminder and health tracking dashboard with cloud sync and guardian management.</p>
+          <a href="#" class="portfolio-card__view">View Project →</a>
+        </div>
+      </div>
+
+      <!-- Card 6: SK Gold Covering -->
+      <div class="portfolio-card">
+        <div class="portfolio-card__image">
+          <img src="assest/poetfilio/WhatsApp Image 2026-08-15 at 4.48.10 PM.jpeg" alt="VerifyAI" />
+        </div>
+        <div class="portfolio-card__body">
+          <div class="portfolio-card__tags">
+            <span class="portfolio-card__tag portfolio-card__tag--fintech">🔍 AI / SaaS</span>
+          </div>
+          <h4 class="portfolio-card__title">VerifyAI</h4>
+          <p class="portfolio-card__desc">An NLP-powered review authenticity platform with real-time analysis and fraud detection.</p>
+          <a href="#" class="portfolio-card__view">View Project →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio__footer">
+      <a href="#" class="btn-view-all">View All <span>→</span></a>
+    </div>
+  </section>
+
+  <!-- =========================================
+       8. TESTIMONIALS
+       ========================================= -->
+  <section class="testimonials" id="testimonials">
+    <h2 class="section-label">TESTIMONIAL</h2>
+    <p class="testimonials__subtitle">What do people praise about Zen Nova Solutions</p>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-card__quote">
+          Google My Business Optimization Helped My Restaurant Get More Local Customers. Now, I Rank #1 In My Area!
+        </p>
+        <span class="testimonial-card__author">ARUN P</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-card__quote">
+          Google My Business Optimization Helped My Restaurant Get More Local Customers. Now, I Rank #1 In My Area!
+        </p>
+        <span class="testimonial-card__author">ARUN P</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p class="testimonial-card__quote">
+          Google My Business Optimization Helped My Restaurant Get More Local Customers. Now, I Rank #1 In My Area!
+        </p>
+        <span class="testimonial-card__author">ARUN P</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       9. FAQ
+       ========================================= -->
+  <section class="faq" id="faq">
+    <div class="faq__header">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <p class="faq__subtext">Everything you need to know before starting your digital journey with Zen Nova Solutions.</p>
+
+    <div class="faq-list" id="faq-list">
+      <div class="faq-item">
+        <button class="faq-item__question">
+          <span class="faq-item__question-text">
+            <svg class="faq-item__question-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            What services does Zen Nova Solutions offer?
+          </span>
+          <span class="faq-item__toggle">+</span>
+        </button>
+        <div class="faq-item__answer">
+          <p>We offer website development, UI/UX design, video editing, graphic design, social media management, website maintenance, e-commerce solutions, and digital marketing services tailored for businesses of all sizes.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">
+          <span class="faq-item__question-text">
+            <svg class="faq-item__question-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            How much does a typical project cost?
+          </span>
+          <span class="faq-item__toggle">+</span>
+        </button>
+        <div class="faq-item__answer">
+          <p>Project costs vary based on scope and requirements. We provide transparent pricing and custom quotes after understanding your specific needs. Contact us for a free consultation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">
+          <span class="faq-item__question-text">
+            <svg class="faq-item__question-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            How long does implementation take?
+          </span>
+          <span class="faq-item__toggle">+</span>
+        </button>
+        <div class="faq-item__answer">
+          <p>Timelines depend on project complexity. A standard business website typically takes 2–4 weeks, while more complex web applications or e-commerce platforms may take 6–8 weeks.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">
+          <span class="faq-item__question-text">
+            <svg class="faq-item__question-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Will my website be mobile-friendly?
+          </span>
+          <span class="faq-item__toggle">+</span>
+        </button>
+        <div class="faq-item__answer">
+          <p>Absolutely! Every website we build is fully responsive and optimized for mobile, tablet and desktop devices to ensure the best experience for all your visitors.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-item__question">
+          <span class="faq-item__question-text">
+            <svg class="faq-item__question-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Do you provide ongoing support?
+          </span>
+          <span class="faq-item__toggle">+</span>
+        </button>
+        <div class="faq-item__answer">
+          <p>Yes, we offer ongoing maintenance and support packages to keep your website secure, updated and performing at its best. We're always here when you need us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       10. CTA / FOOTER
+       ========================================= -->
+  <footer class="cta-footer" id="cta-footer">
+    <h2 class="cta-footer__heading">Ready to grow your business online?</h2>
+    <p class="cta-footer__text">
+      Let's build a digital experience that works for your business. Connect with our team today to discuss your next big project.
+    </p>
+    <div class="cta-footer__buttons">
+      <a href="#" class="btn-cta-primary">
+        Start Your Project
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+      </a>
+      <a href="https://wa.me/919345743409" class="btn-cta-secondary" target="_blank" rel="noopener noreferrer">
+        <!-- WhatsApp icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Talk on WhatsApp
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <!-- GSAP for MagicBento effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/magic-bento.js"></script>
+  <!-- OGL WebGL Library for SpecularButton effects -->
+  <script src="https://cdn.jsdelivr.net/npm/ogl@1.0.6/dist/ogl.umd.js"></script>
+  <script src="js/specular-button.js"></script>
+  <!-- BlurText & ClickSpark effects -->
+  <script src="js/blur-text.js"></script>
+  <script src="js/click-spark.js"></script>
+</body>
+</html>
