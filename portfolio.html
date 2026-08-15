@@ -238,8 +238,9 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.3s ease;
       cursor: pointer;
+      opacity: 1;
     }
 
     .pf-card:hover {
@@ -1243,39 +1244,67 @@
       new ResizeObserver(() => setTimeout(buildMap, 0)).observe(pill);
     })();
 
-    // ── Portfolio Filter + Sliding Indicator ──
+    // ── Portfolio Filter + Smooth Scroll + Animated Transitions ──
     const filterTabs  = document.querySelectorAll('.filter-tab');
     const pfCards     = document.querySelectorAll('.pf-card');
     const indicator   = document.getElementById('pf-pill-indicator');
 
     function moveIndicator(tab) {
       if (!indicator || !tab) return;
-      const pill    = document.getElementById('pf-glass-pill');
+      const pill     = document.getElementById('pf-glass-pill');
       const pillRect = pill.getBoundingClientRect();
       const tabRect  = tab.getBoundingClientRect();
       indicator.style.left  = (tabRect.left - pillRect.left) + 'px';
       indicator.style.width = tabRect.width + 'px';
     }
 
-    // Set initial indicator on page load
+    // Set initial indicator position on page load
     window.addEventListener('load', () => {
       const active = document.querySelector('.filter-tab.active');
       moveIndicator(active);
     });
 
     filterTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
         filterTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
         moveIndicator(tab);
 
         const filter = tab.dataset.filter;
+
+        // Smooth scroll to project grid if needed
+        const workSection = document.getElementById('work');
+        if (workSection) {
+          const navHeight = 90;
+          const targetPos = workSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          if (Math.abs(window.pageYOffset - targetPos) > 60) {
+            window.scrollTo({
+              top: targetPos,
+              behavior: 'smooth'
+            });
+          }
+        }
+
+        // Filter cards with smooth fade & scale animation
         pfCards.forEach(card => {
-          if (filter === 'all') {
+          const cats = (card.dataset.category || '').split(' ');
+          const matches = filter === 'all' || cats.includes(filter);
+
+          if (matches) {
             card.style.display = '';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0) scale(1)';
+            }, 20);
           } else {
-            const cats = card.dataset.category || '';
-            card.style.display = cats.includes(filter) ? '' : 'none';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(8px) scale(0.96)';
+            setTimeout(() => {
+              if (card.style.opacity === '0') {
+                card.style.display = 'none';
+              }
+            }, 250);
           }
         });
       });
