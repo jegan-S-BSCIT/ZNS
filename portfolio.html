@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/magic-bento.css" />
   <link rel="stylesheet" href="css/specular-button.css" />
   <link rel="stylesheet" href="css/blur-text.css" />
+  <link rel="stylesheet" href="css/count-up.css" />
   <link rel="icon" href="assest/logo-mark.webp" type="image/webp" />
 
   <style>
@@ -430,10 +431,11 @@
     }
 
     .results-band__heading {
-      font-family: var(--font-secondary);
-      font-weight: 700;
+      font-family: "baskerville-urw", "Libre Baskerville", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, serif;
+      font-weight: 500;
+      font-style: normal;
       font-size: 32px;
-      line-height: 40px;
+      line-height: 42px;
       color: #ffffff;
       margin-bottom: 16px;
     }
@@ -688,6 +690,18 @@
       <a href="services.html" class="btn-cta-secondary" style="background: transparent; color: var(--color-dark-teal); border-color: rgba(5,46,52,0.25);">
         View Services
       </a>
+    </div>
+  </section>
+
+  <!-- =========================================
+       3b. SPECIAL EDITORIAL QUOTE
+       ========================================= -->
+  <section class="special-quote-banner">
+    <div class="special-quote-banner__inner">
+      <p class="special-quote-banner__text baskerville-quote blur-text" data-delay="80" data-direction="top">
+        "Every project starts the same way — with your business first. We learn your business, your audience, and what success looks like before we write a single line of code. If you've seen something here close to what you're building, let's talk about yours."
+      </p>
+      <span class="special-quote-banner__author">Zen Nova Solutions Principle</span>
     </div>
   </section>
 
@@ -1062,8 +1076,8 @@
   <section class="results-band">
     <div class="results-band__inner">
       <div class="results-band__eyebrow">Want Results Like This?</div>
-      <h2 class="results-band__heading">Every project starts the same way — with your business first.</h2>
-      <p class="results-band__text">We learn your business, your audience, and what success looks like before we write a single line of code. If you've seen something here close to what you're building, let's talk about yours.</p>
+      <h2 class="results-band__heading blur-text" data-delay="90" data-direction="top">Every project starts the same way — with your business first.</h2>
+      <p class="results-band__text blur-text" data-delay="60" data-direction="top">We learn your business, your audience, and what success looks like before we write a single line of code. If you've seen something here close to what you're building, let's talk about yours.</p>
       <div class="results-band__actions">
         <a href="https://wa.me/919345743409" class="btn-cta-primary" target="_blank" rel="noopener noreferrer">
           Book Free Consultation
@@ -1204,6 +1218,7 @@
   <script src="https://cdn.jsdelivr.net/npm/ogl@1.0.6/dist/ogl.umd.js"></script>
   <script src="js/specular-button.js"></script>
   <script src="js/blur-text.js"></script>
+  <script src="js/count-up.js"></script>
   <script src="js/click-spark.js"></script>
 
   <script>

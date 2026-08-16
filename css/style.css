@@ -4,7 +4,7 @@
    ============================================= */
 
 /* ---------- Google Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
 
 /* ---------- CSS Custom Properties ---------- */
 :root {
@@ -76,7 +76,8 @@ a {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -222,6 +223,15 @@ button {
   z-index: 1000;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 49, 61, 0.06);
+  transition: height 0.35s ease, background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.navbar.navbar--scrolled {
+  height: 56px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  box-shadow: 0 4px 20px rgba(0, 49, 61, 0.08);
 }
 
 .navbar__brand {
@@ -398,8 +408,16 @@ button {
 }
 
 @keyframes sparklePulse {
-  0% { transform: scale(0.85) rotate(-12deg); opacity: 0.7; }
-  100% { transform: scale(1.25) rotate(18deg); opacity: 1; filter: drop-shadow(0 0 10px rgba(255, 115, 0, 0.9)); }
+  0% {
+    transform: scale(0.85) rotate(-12deg);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.25) rotate(18deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(255, 115, 0, 0.9));
+  }
 }
 
 .hero__description {
@@ -495,8 +513,13 @@ button {
 }
 
 @keyframes orbitSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Center logo */
@@ -569,23 +592,73 @@ button {
 }
 
 @keyframes orbitCounterSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 /* Position dots around outer ring (440px) */
-.orbit-dot--1 { top: -23px; left: 50%; transform: translateX(-50%); background: var(--dot-sap); }
-.orbit-dot--2 { top: 50%; right: -23px; transform: translateY(-50%); background: var(--dot-css); }
-.orbit-dot--3 { bottom: -23px; left: 50%; transform: translateX(-50%); background: var(--dot-html); }
-.orbit-dot--4 { top: 50%; left: -23px; transform: translateY(-50%); background: var(--dot-react); }
+.orbit-dot--1 {
+  top: -23px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dot-sap);
+}
+
+.orbit-dot--2 {
+  top: 50%;
+  right: -23px;
+  transform: translateY(-50%);
+  background: var(--dot-css);
+}
+
+.orbit-dot--3 {
+  bottom: -23px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dot-html);
+}
+
+.orbit-dot--4 {
+  top: 50%;
+  left: -23px;
+  transform: translateY(-50%);
+  background: var(--dot-react);
+}
 
 /* Position dots around middle ring (320px) */
-.orbit-dot--figma { top: -23px; left: 50%; transform: translateX(-50%); background: var(--dot-figma); }
-.orbit-dot--python { bottom: -23px; left: 50%; transform: translateX(-50%); background: var(--dot-python); }
+.orbit-dot--figma {
+  top: -23px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dot-figma);
+}
+
+.orbit-dot--python {
+  bottom: -23px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dot-python);
+}
 
 /* Position dots around inner ring (200px) */
-.orbit-dot--5 { top: 50%; left: -23px; transform: translateY(-50%); background: var(--dot-js); }
-.orbit-dot--6 { top: 50%; right: -23px; transform: translateY(-50%); background: var(--dot-php); }
+.orbit-dot--5 {
+  top: 50%;
+  left: -23px;
+  transform: translateY(-50%);
+  background: var(--dot-js);
+}
+
+.orbit-dot--6 {
+  top: 50%;
+  right: -23px;
+  transform: translateY(-50%);
+  background: var(--dot-php);
+}
 
 /* Small decorative dots */
 .orbit-deco-dot {
@@ -637,11 +710,22 @@ button {
   gap: 0;
   animation: marqueeScroll 30s linear infinite;
   width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 
 @keyframes marqueeScroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee-item {
@@ -702,13 +786,13 @@ button {
   background: var(--color-white);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
 }
 
 .focus-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(0, 49, 61, 0.08), 0 2px 6px rgba(0, 49, 61, 0.04);
-  border-color: rgba(255, 115, 0, 0.25);
+  box-shadow: 0 12px 32px rgba(0, 49, 61, 0.12), 0 2px 6px rgba(0, 49, 61, 0.04);
+  border-color: rgba(255, 115, 0, 0.35);
 }
 
 .focus-card__icon {
@@ -721,11 +805,12 @@ button {
   font-size: 44px;
   background: linear-gradient(135deg, rgba(255, 115, 0, 0.08) 0%, rgba(255, 115, 0, 0.03) 100%);
   border-radius: 50%;
-  transition: background 0.3s;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
 }
 
 .focus-card:hover .focus-card__icon {
-  background: linear-gradient(135deg, rgba(255, 115, 0, 0.14) 0%, rgba(255, 115, 0, 0.06) 100%);
+  transform: scale(1.1) rotate(6deg);
+  background: linear-gradient(135deg, rgba(255, 115, 0, 0.16) 0%, rgba(255, 115, 0, 0.08) 100%);
 }
 
 .focus-card__title {
@@ -815,6 +900,11 @@ button {
   height: 80px;
   margin-bottom: 10px;
   object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .service-card__icon {
+  transform: scale(1.06);
 }
 
 .service-card__title {
@@ -891,7 +981,7 @@ button {
 }
 
 .service-card__link:hover .service-card__link-arrow {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 /* =============================================
@@ -938,8 +1028,22 @@ button {
   left: 112px;
   right: 112px;
   height: 0;
-  border-bottom: 1.6px dashed var(--color-primary);
+  border-bottom: 1.6px dashed var(--color-border-light);
   z-index: 0;
+}
+
+/* Animated progress fill line */
+.process-timeline__progress {
+  position: absolute;
+  top: 60px;
+  left: 112px;
+  height: 2px;
+  width: 0%;
+  max-width: calc(100% - 224px);
+  background: linear-gradient(90deg, #FF7300 0%, #FFA800 100%);
+  box-shadow: 0 0 10px rgba(255, 115, 0, 0.6);
+  z-index: 1;
+  transition: width 0.4s ease-out;
 }
 
 .process-step {
@@ -1111,12 +1215,35 @@ button {
   color: var(--color-teal-mid);
 }
 
-.portfolio-card__tag--ecom { background: #FFF3E6; color: #B85C00; }
-.portfolio-card__tag--photo { background: #E8F5E9; color: #2E7D32; }
-.portfolio-card__tag--retail { background: #E3F2FD; color: #1565C0; }
-.portfolio-card__tag--hotel { background: #FFF8E1; color: #F57F17; }
-.portfolio-card__tag--gold { background: #FFF3E0; color: #E65100; }
-.portfolio-card__tag--fintech { background: #EDE7F6; color: #5E35B1; }
+.portfolio-card__tag--ecom {
+  background: #FFF3E6;
+  color: #B85C00;
+}
+
+.portfolio-card__tag--photo {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.portfolio-card__tag--retail {
+  background: #E3F2FD;
+  color: #1565C0;
+}
+
+.portfolio-card__tag--hotel {
+  background: #FFF8E1;
+  color: #F57F17;
+}
+
+.portfolio-card__tag--gold {
+  background: #FFF3E0;
+  color: #E65100;
+}
+
+.portfolio-card__tag--fintech {
+  background: #EDE7F6;
+  color: #5E35B1;
+}
 
 .portfolio-card__title {
   font-family: var(--font-primary);
@@ -1391,7 +1518,7 @@ button {
   color: var(--color-white);
   background: var(--color-dark-teal);
   border-radius: 50%;
-  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
 }
 
 .faq-item.active .faq-item__toggle {
@@ -1401,13 +1528,16 @@ button {
 
 .faq-item__answer {
   max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
+  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.35s ease, padding 0.35s ease;
 }
 
 .faq-item.active .faq-item__answer {
-  max-height: 200px;
+  max-height: 280px;
+  opacity: 1;
   padding: 0 16px 18px 48px;
+  transition: max-height 0.4s cubic-bezier(0.5, 0, 0.1, 1), opacity 0.4s ease 0.05s, padding 0.35s ease;
 }
 
 .faq-item__answer p {
@@ -1920,5 +2050,125 @@ button {
   .cta-footer__heading {
     font-size: 24px;
     line-height: 32px;
+  }
+}
+
+/* =============================================
+   SPECIAL EDITORIAL QUOTE BANNER
+   Baskerville font styling with BlurText animation
+   ============================================= */
+.special-quote-banner {
+  padding: 60px 32px;
+  background: linear-gradient(180deg, #FFFDF9 0%, #FAFBFC 100%);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.special-quote-banner::before {
+  content: '“';
+  font-family: "baskerville-urw", "Libre Baskerville", Baskerville, Georgia, serif;
+  font-size: 140px;
+  line-height: 1;
+  color: var(--color-primary);
+  opacity: 0.12;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.special-quote-banner__inner {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.special-quote-banner__text {
+  font-family: "baskerville-urw", "Libre Baskerville", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 48px;
+  color: var(--color-dark-teal);
+  letter-spacing: -0.2px;
+}
+
+/* Baskerville typography utility for special quotes */
+.baskerville-quote,
+.why-matters-strip__heading,
+.results-band__heading {
+  font-family: "baskerville-urw", "Libre Baskerville", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, serif !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+}
+
+.special-quote-banner__author {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.special-quote-banner__author::before,
+.special-quote-banner__author::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .special-quote-banner {
+    padding: 48px 24px;
+  }
+
+  .special-quote-banner__text {
+    font-size: 25px;
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 640px) {
+  .special-quote-banner {
+    padding: 36px 18px;
+  }
+
+  .special-quote-banner__text {
+    font-size: 21px;
+    line-height: 32px;
+  }
+}
+
+/* =============================================
+   ACCESSIBILITY & REDUCED MOTION
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+
+  .grow__sparkle {
+    animation: none !important;
   }
 }
