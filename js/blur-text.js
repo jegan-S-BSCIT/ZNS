@@ -1,7 +1,7 @@
 /* =============================================
    BLUR TEXT — Vanilla JS Implementation
    Ported from React Bits <BlurText /> component
-   Staggered word blur reveal on scroll
+   Staggered word or letter blur reveal on scroll
    ============================================= */
 
 (function () {
@@ -11,15 +11,19 @@
     if (!element || element.dataset.blurTextInit) return;
     element.dataset.blurTextInit = 'true';
 
-    const delayStep = options.delay || 120; // ms
-    const direction = options.direction || 'top';
-    const animateBy = options.animateBy || 'words';
+    const delayStep = options.delay !== undefined ? options.delay : (parseInt(element.dataset.delay, 10) || 120); // ms
+    const direction = options.direction || element.dataset.direction || 'top';
+    const animateBy = options.animateBy || element.dataset.animateBy || 'words';
+    const stepDuration = options.stepDuration || parseFloat(element.dataset.stepDuration) || 0.35; // seconds
+    const threshold = options.threshold !== undefined ? options.threshold : (parseFloat(element.dataset.threshold) || 0.15);
+    const rootMargin = options.rootMargin || element.dataset.rootMargin || '0px';
 
-    // Parse child nodes so we don't break nested spans (e.g., <span class="grow">grow</span>)
+    element.style.setProperty('--blur-text-duration', `${stepDuration}s`);
+
     const container = document.createElement('span');
     container.className = 'blur-text-container';
     
-    let wordIndex = 0;
+    let segmentIndex = 0;
 
     function processNode(node, parentTarget) {
       if (node.nodeType === Node.TEXT_NODE) {
@@ -35,21 +39,24 @@
           } else {
             const wordSpan = document.createElement('span');
             wordSpan.className = `blur-text-word ${direction === 'bottom' ? 'blur-text-direction-bottom' : ''}`;
-            wordSpan.style.transitionDelay = `${wordIndex * delayStep}ms`;
+            wordSpan.style.transitionDelay = `${segmentIndex * delayStep}ms`;
             wordSpan.textContent = segment;
             parentTarget.appendChild(wordSpan);
-            wordIndex++;
+            segmentIndex++;
           }
         });
       } else if (node.nodeType === Node.ELEMENT_NODE) {
-        if (node.classList && node.classList.contains('grow')) {
+        const tagName = node.tagName.toLowerCase();
+        if (tagName === 'br') {
+          parentTarget.appendChild(document.createElement('br'));
+        } else if (node.classList && (node.classList.contains('grow') || node.classList.contains('grow__sparkle'))) {
           const wordSpan = document.createElement('span');
           wordSpan.className = `blur-text-word ${direction === 'bottom' ? 'blur-text-direction-bottom' : ''}`;
-          wordSpan.style.transitionDelay = `${wordIndex * delayStep}ms`;
+          wordSpan.style.transitionDelay = `${segmentIndex * delayStep}ms`;
           const clone = node.cloneNode(true);
           wordSpan.appendChild(clone);
           parentTarget.appendChild(wordSpan);
-          wordIndex++;
+          segmentIndex++;
         } else {
           const clone = node.cloneNode(false);
           Array.from(node.childNodes).forEach(child => processNode(child, clone));
@@ -63,56 +70,79 @@
     element.innerHTML = '';
     element.appendChild(container);
 
-    // IntersectionObserver to trigger animation when in view
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             container.classList.add('animated');
+            if (typeof options.onAnimationComplete === 'function') {
+              const totalTime = (segmentIndex * delayStep) + (stepDuration * 1000);
+              setTimeout(() => {
+                options.onAnimationComplete();
+              }, totalTime);
+            }
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: options.threshold || 0.15, rootMargin: options.rootMargin || '0px' }
+      { threshold, rootMargin }
     );
 
     observer.observe(element);
   }
 
+  // Expose global window.BlurText function matching React Bits API
+  window.BlurText = function (target, options) {
+    if (typeof target === 'string') {
+      document.querySelectorAll(target).forEach(el => applyBlurTextToElement(el, options));
+    } else if (target instanceof HTMLElement) {
+      applyBlurTextToElement(target, options);
+    }
+  };
+
   function initBlurText() {
-    // 1. Hero Heading
-    const heroHeading = document.querySelector('.hero__heading');
-    if (heroHeading) {
-      applyBlurTextToElement(heroHeading, { delay: 110, direction: 'top' });
-    }
+    // 1. Elements explicitly tagged with class="blur-text"
+    document.querySelectorAll('.blur-text').forEach(el => {
+      applyBlurTextToElement(el);
+    });
 
-    // 2. Hero Description
-    const heroDesc = document.querySelector('.hero__description');
-    if (heroDesc) {
-      applyBlurTextToElement(heroDesc, { delay: 60, direction: 'top' });
-    }
-
-    // 3. Main Section Headings & Subtitles across the site
-    const headingsToAnimate = [
-      { selector: '.our-focus .section-label', delay: 150 },
-      { selector: '.our-focus .section-heading', delay: 100 },
-      { selector: '.what-we-do .section-label', delay: 150 },
-      { selector: '.what-we-do__subtitle', delay: 90 },
-      { selector: '.working-process .section-label', delay: 150 },
-      { selector: '.working-process__subtitle', delay: 110 },
-      { selector: '.portfolio__header h2', delay: 110 },
-      { selector: '.testimonials .section-label', delay: 150 },
-      { selector: '.testimonials__subtitle', delay: 100 },
-      { selector: '.faq__header h2', delay: 110 },
-      { selector: '.cta-footer__heading', delay: 110 },
-      { selector: '.cta-footer__text', delay: 70 }
+    // 2. Selectors for page heroes across all 5 pages
+    const heroSelectors = [
+      { selector: '.hero__heading', delay: 110, direction: 'top' },
+      { selector: '.hero__description', delay: 60, direction: 'top' },
+      { selector: '.about-hero__heading', delay: 110, direction: 'top' },
+      { selector: '.about-hero__sub', delay: 60, direction: 'top' },
+      { selector: '.portfolio-hero__heading', delay: 110, direction: 'top' },
+      { selector: '.portfolio-hero__sub', delay: 60, direction: 'top' },
+      { selector: '.pricing-hero__heading', delay: 110, direction: 'top' },
+      { selector: '.pricing-hero__sub', delay: 60, direction: 'top' },
+      { selector: '.services-hero__heading', delay: 110, direction: 'top' },
+      { selector: '.services-hero__sub', delay: 60, direction: 'top' }
     ];
 
-    headingsToAnimate.forEach(item => {
-      const el = document.querySelector(item.selector);
-      if (el) {
-        applyBlurTextToElement(el, { delay: item.delay, direction: 'top' });
-      }
+    heroSelectors.forEach(item => {
+      document.querySelectorAll(item.selector).forEach(el => {
+        applyBlurTextToElement(el, { delay: item.delay, direction: item.direction });
+      });
+    });
+
+    // 3. Section labels, section headings, and titles across all 5 pages
+    const sectionSelectors = [
+      '.section-label',
+      '.section-heading',
+      '.what-we-do__subtitle',
+      '.working-process__subtitle',
+      '.testimonials__subtitle',
+      '.featured-case__title',
+      '.services-detail__title',
+      '.cta-footer__heading',
+      '.cta-footer__text'
+    ];
+
+    sectionSelectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        applyBlurTextToElement(el, { delay: 90, direction: 'top' });
+      });
     });
   }
 
@@ -122,3 +152,4 @@
     initBlurText();
   }
 })();
+
