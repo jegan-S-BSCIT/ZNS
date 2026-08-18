@@ -34,12 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       hamburger.classList.toggle('active');
+      document.body.classList.toggle('nav-open');
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
         hamburger.classList.remove('active');
+        document.body.classList.remove('nav-open');
       });
     });
   }
@@ -159,49 +161,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =============================================
-  // 4. TESTIMONIALS AUTO-ROTATOR (PAUSABLE ON HOVER)
+  // 4. TESTIMONIALS CAROUSEL
   // =============================================
-  const testimonialsSection = document.querySelector('.testimonials');
-  const testimonialCards = document.querySelectorAll('.testimonial-card');
+  const testimonialGrid = document.querySelector('.testimonial-grid');
+  const prevBtn = document.querySelector('.testimonial-arrow--prev');
+  const nextBtn = document.querySelector('.testimonial-arrow--next');
 
-  if (testimonialsSection && testimonialCards.length > 1 && !isReducedMotion) {
-    let activeTestimonialIndex = 0;
-    let testimonialTimer = null;
+  if (testimonialGrid && prevBtn && nextBtn) {
+    // Scroll amount is roughly one card + gap
+    const scrollAmount = 324;
 
-    function rotateTestimonials() {
-      testimonialCards.forEach((card, idx) => {
-        if (idx === activeTestimonialIndex) {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(-4px) scale(1.02)';
-          card.style.borderColor = 'var(--color-primary)';
-        } else {
-          card.style.opacity = '0.7';
-          card.style.transform = 'translateY(0) scale(1)';
-          card.style.borderColor = 'var(--color-border-light)';
-        }
-      });
+    prevBtn.addEventListener('click', () => {
+      testimonialGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
 
-      activeTestimonialIndex = (activeTestimonialIndex + 1) % testimonialCards.length;
-    }
-
-    function startTestimonialTimer() {
-      if (!testimonialTimer) {
-        testimonialTimer = setInterval(rotateTestimonials, 4000);
-      }
-    }
-
-    function stopTestimonialTimer() {
-      if (testimonialTimer) {
-        clearInterval(testimonialTimer);
-        testimonialTimer = null;
-      }
-    }
-
-    testimonialsSection.addEventListener('mouseenter', stopTestimonialTimer);
-    testimonialsSection.addEventListener('mouseleave', startTestimonialTimer);
-    
-    rotateTestimonials();
-    startTestimonialTimer();
+    nextBtn.addEventListener('click', () => {
+      testimonialGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
   }
 
   // =============================================

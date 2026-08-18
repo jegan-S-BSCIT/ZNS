@@ -1,0 +1,208 @@
+Zen Nova Solution 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hero: Remove Contact button, change subtitle, keep “Start Your Project” →       
+WhatsApp, and make fully mobile responsive. 
+
+ 
+I want this type of the menu bar touch panna eppadi  varanum  
+ 
+
+ 
+Please update the Testimonial section by adding Left (←) and Right (→) 
+navigation buttons. 
+The buttons should allow users to move between testimonials smoothly. Place 
+them outside the testimonial cards and keep them vertically centered. The active 
+testimonial can have the existing orange highlight. 
+Keep the current testimonial card design, colors, typography, and spacing 
+unchanged. Make the arrows responsive and swipe-friendly on mobile. 
+In services Page 
+ 
+Please redesign the “Why This Matters” section with a more unique, premium 
+layout instead of the current simple two-column structure. 
+• 
+Keep the existing dark background, typography style, and Zen Nova branding. 
+• 
+Create an asymmetrical editorial layout with stronger visual hierarchy. 
+• 
+Make the main heading large and dominant on one side. 
+• 
+Break the supporting content into 3 small benefit blocks/cards instead of two 
+long paragraphs. 
+• 
+Add subtle numbers or visual markers like 01 / 02 / 03 for each benefit. 
+• 
+Use a staggered/offset arrangement so the section feels more dynamic and 
+custom-designed. 
+• 
+Add a small supporting graphic or abstract development-related visual element 
+without overcrowding. 
+• 
+Maintain generous whitespace and consistent container margins. 
+• 
+Make the layout fully responsive: on mobile, stack the content vertically while 
+keeping the visual hierarchy. 
+• 
+Keep the section minimal, premium, modern, and conversion-focused. 
+
+Important: Do not change the existing brand colors or completely redesign the 
+website. Only improve this section with a unique layout. 
+ 
+in Service 
+add the 6  
+page 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+Remove one whatsapp button in the 
+service page 
+ 
+For the About page stats section, please update the typography for 
+both numbers and labels. 
+
+• Numbers: Use Space Grotesk ExtraBold (800) — large, bold, 
+modern, and distinctive. 
+• Labels: Use DM Sans Medium (500) — clean and highly readable. 
+• Keep the existing orange brand color for the numbers. 
+• Increase the visual contrast between numbers and labels. 
+• Keep all 4 statistics perfectly aligned with equal spacing. 
+• Add slightly tighter letter spacing to the numbers and subtle letter 
+spacing to the labels. 
+• Make the typography responsive on tablet/mobile. 
+The goal is to make “Sep ’25 / 20+ / 2 / TN” feel like a strong 
+premium brand statistic rather than a standard text row. 
+Do not change the existing colors or overall section layout—only 
+improve the typography and visual hierarchy. 
+ 
+ 
+
+  
+ 
+Please redesign the “Why This Matters to You” section with a genuinely unique 
+UI layout. The current centered heading + paragraph layout feels too generic. 
+New UI Direction 
+• 
+Keep the existing dark teal background and orange accent. 
+• 
+Use an asymmetric editorial layout instead of centered content. 
+• 
+Place the main heading on the left side, large and bold. 
+• 
+On the right side, create 3 vertically stacked benefit blocks with: 
+01 — More Attention 
+02 — Faster Decisions 
+03 — Direct Access 
+• 
+Each block should have a short 1–2 line explanation. 
+• 
+Add a thin vertical/animated line connecting the three numbered blocks. 
+• 
+Use oversized, subtle background numbers 01 / 02 / 03 as decorative elements. 
+• 
+Add a small orange accent line or micro-label for each benefit. 
+• 
+Keep generous whitespace and strong typography hierarchy. 
+
+• 
+Avoid excessive cards, shadows, gradients, or unnecessary animations. 
+• 
+Add a small “Why it matters →” visual indicator at the bottom. 
+Responsive 
+On mobile: 
+• 
+Stack the heading first. 
+• 
+Then show the 3 benefits vertically. 
+• 
+Keep the numbered visual system. 
+• 
+Reduce font sizes and spacing without losing the premium look. 
+• 
+No horizontal overflow. 
+Goal: Make this section feel like a premium digital studio manifesto, not a 
+normal “heading + paragraph” section. 
+Keep the existing Zen Nova branding and colors; change only the UI layout and 
+hierarchy. 
+ 
+            Remove the whatsapp button on the protofolio page 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+change this  pricing section 
+ 
+Remove this pros and cons in this pricing section  
+
+Zen Nova Solutions — Website Update
+Summary
+Overall Direction: “Refine, don’t redesign.”
+The existing Zen Nova branding, colors, typography style, spacing, and premium agency feel should
+remain consistent. The focus is on refining the UI, improving responsiveness, and making selected
+sections more premium and conversion-focused.
+1. Hero Section
+• Remove the Contact button.
+• Update the subtitle.
+• Keep “Start Your Project” and connect it to WhatsApp.
+• Make the hero fully mobile responsive.
+2. Navigation / Menu
+• Improve the mobile menu interaction so it feels clean, intuitive, and touch-friendly.
+3. Testimonials
+• Add left/right navigation arrows.
+• Keep the existing testimonial card design, colors, typography, and spacing unchanged.
+• Make navigation responsive and swipe-friendly on mobile.
+4. Services — “Why This Matters”
+• Replace the generic two-column layout with an asymmetric editorial layout.
+• Use three benefit blocks: 01 / 02 / 03.
+• Add stronger hierarchy, generous whitespace, and a subtle development-related visual.
+• Keep the existing dark background and Zen Nova branding.
+5. WhatsApp Buttons
+• Remove the unnecessary/duplicate WhatsApp button from the Services page.
+• Remove the WhatsApp button from the Portfolio page.
+6. About Page Stats
+• Numbers: Space Grotesk ExtraBold (800).
+• Labels: DM Sans Medium (500).
+• Keep orange numbers and improve typography/visual hierarchy.
+• Maintain equal alignment and responsive behavior.
+7. “Why This Matters to You”
+• Create a more unique premium UI.
+• Left: large heading.
+• Right: 01 — More Attention; 02 — Faster Decisions; 03 — Direct Access.
+• Add a connecting line, subtle background numbers, and orange accents.
+• On mobile, stack the content vertically with no horizontal overflow.
+8. Pricing
+
+• Update the current pricing section.
+• Remove the Pros & Cons content from the pricing section.
+Final Goal
+Make Zen Nova Solutions look more premium, intentional, modern, and conversion-focused while
+preserving the existing brand identity. The priority is better UI hierarchy, responsive mobile experience,
+and removal of unnecessary elements.
