@@ -30,8 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
 
+  function closeMobileNav() {
+    if (navLinks && hamburger) {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+      document.body.classList.remove('nav-open');
+    }
+  }
+
   if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
       navLinks.classList.toggle('active');
       hamburger.classList.toggle('active');
       document.body.classList.toggle('nav-open');
@@ -39,10 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
-        document.body.classList.remove('nav-open');
+        closeMobileNav();
       });
+    });
+
+    // Close menu when tapping outside of navbar/drawer
+    document.addEventListener('click', (e) => {
+      if (document.body.classList.contains('nav-open')) {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          closeMobileNav();
+        }
+      }
     });
   }
 
@@ -66,25 +82,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
   const navAnchors = document.querySelectorAll('.navbar__links a');
 
+  // Detect current page filename
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
   function highlightNav() {
     const scrollY = window.scrollY + 120;
 
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-
-      if (scrollY >= top && scrollY < top + height) {
-        navAnchors.forEach(a => {
-          a.classList.remove('active-link');
-          a.style.color = '';
-          if (a.getAttribute('href') === '#' + id || a.getAttribute('href') === id + '.html') {
-            a.classList.add('active-link');
-            a.style.color = '#FF7300';
-          }
-        });
+    // Highlight active page link based on URL if not an in-page section link
+    navAnchors.forEach(a => {
+      const href = a.getAttribute('href');
+      if (href && (href === currentPage || (currentPage === '' && href === 'index.html'))) {
+        a.classList.add('active-link');
+        a.style.color = '#FF7300';
       }
     });
+
+    if (sections.length > 0) {
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollY >= top && scrollY < top + height) {
+          navAnchors.forEach(a => {
+            const href = a.getAttribute('href');
+            if (href && href.startsWith('#')) {
+              a.classList.remove('active-link');
+              if (href === '#' + id) {
+                a.classList.add('active-link');
+                a.style.color = '#FF7300';
+              } else {
+                a.style.color = '';
+              }
+            }
+          });
+        }
+      });
+    }
   }
 
   window.addEventListener('scroll', highlightNav, { passive: true });
